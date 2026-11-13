@@ -83,6 +83,7 @@
       catBar.style.display = searching ? "none" : "";
       if (clearBtn) clearBtn.style.display = searching ? "block" : "none";
 
+      var lastShown = null;
       items.forEach(function (item) {
         var cat = item.getAttribute("data-rd-faq-item");
         var text = item.textContent.toLowerCase();
@@ -90,8 +91,10 @@
         var matchesQuery = !searching || text.indexOf(query) !== -1;
         var show = matchesCat && matchesQuery;
         item.style.display = show ? "" : "none";
-        if (show) visibleCount++;
+        item.classList.remove("faq-last");
+        if (show) { visibleCount++; lastShown = item; }
       });
+      if (lastShown) lastShown.classList.add("faq-last");
 
       if (resultsBar) resultsBar.style.display = searching ? "flex" : "none";
       if (resultsTitle) resultsTitle.textContent = 'Search results for "' + query + '"';
@@ -100,7 +103,7 @@
           visibleCount + (visibleCount === 1 ? " result" : " results");
       }
       if (emptyState) {
-        emptyState.style.display = visibleCount === 0 ? "block" : "none";
+        emptyState.style.display = visibleCount === 0 ? "flex" : "none";
       }
     }
 
@@ -115,8 +118,10 @@
     catButtons.forEach(function (btn) {
       btn.addEventListener("click", function () {
         activeCat = btn.getAttribute("data-rd-faq-cat");
+        var baseCls = "flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-base font-bold transition-all duration-200 ";
         catButtons.forEach(function (b) {
           b.setAttribute("aria-selected", b === btn ? "true" : "false");
+          b.className = baseCls + (b === btn ? catBar.getAttribute("data-rd-active") : catBar.getAttribute("data-rd-inactive"));
         });
         applyFilter();
       });
@@ -135,6 +140,20 @@
     };
     window.addEventListener("scroll", updateProgress, { passive: true });
     updateProgress();
+  }
+
+  // ---------- Order form: progress line fill ----------
+  var fill = document.querySelector("[data-rd-progress-fill]");
+  if (fill) {
+    var steps = document.querySelectorAll(".progress-step");
+    var upd = function () {
+      var cur = 0;
+      steps.forEach(function (st, i) { if (st.classList.contains("current")) cur = i; });
+      fill.style.width = (steps.length > 1 ? (cur / (steps.length - 1)) * 100 : 0) + "%";
+    };
+    var mo = new MutationObserver(upd);
+    steps.forEach(function (st) { mo.observe(st, { attributes: true, attributeFilter: ["class"] }); });
+    upd();
   }
 
   // ---------- Order form file-input filename display (cosmetic only) ----------

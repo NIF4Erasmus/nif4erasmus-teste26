@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-<meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discovering Portugal: A Guide to the Regions | NIF4Erasmus</title>
@@ -24,8 +24,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png" />
     <link rel="manifest" href="assets/favicon_io/site.webmanifest" />
 
+    <style>@layer theme, base, legacy, components, utilities;</style>
+    <link rel="stylesheet" href="assets/css/figma.css" />
     <link rel="stylesheet" href="assets/css/redesign.css" />
     <link rel="stylesheet" href="assets/css/redesign-pages.css" />
+    <link rel="stylesheet" href="assets/css/site.css" />
 
     <!-- EmailJS (contact form + footer callback widget) -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -37,221 +40,161 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
   </head>
-  <body class="rd">
-    <a class="rd-skip-link" href="#main">Skip to content</a>
-    <nav class="rd-nav">
-      <div class="rd-nav__bar">
-        <a href="index.html" class="rd-nav__logo" aria-label="NIF4Erasmus home">
-          <img src="assets/images/logo.png" alt="NIF4Erasmus" width="104" height="32" />
-        </a>
-
-        <div class="rd-nav__links">
-          <a href="about.html" class="rd-nav__link">About Us</a>
-              <div class="rd-nav__dropdown">
-                <button class="rd-nav__link" type="button">Services</button>
-                <div class="rd-nav__menu">
-                  <a href="index.html#services" data-rd-scroll="services">NIF</a>
-                  <a href="index.html#services" data-rd-scroll="services">NIF &amp; Tax Representative</a>
-                  <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services">Other Legal Services</a>
-                </div>
+  <body>
+  <div class="min-h-screen bg-white text-gray-900 font-sans flex flex-col">
+    <a class="rd-skip-link" href="#main">Skip to main content</a>
+    <nav aria-label="Main" class="relative w-full bg-white border-b border-gray-100 z-50"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a class="flex items-center gap-2 cursor-pointer" href="index.html"><img alt="NIF4Erasmus" class="h-8 w-auto object-contain" src="assets/fg/logo-no-background-CCiE5oLl.png"/></a><div class="hidden md:flex items-center gap-8"><a class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors" href="about.html">About Us</a><div class="relative group"><a class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors py-2 inline-block" data-rd-scroll="services" href="index.html#services">Services</a><div class="absolute top-full left-0 w-64 bg-white border border-gray-100 shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform origin-top -translate-y-2 group-hover:translate-y-0"><div class="py-2"><a class="block w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium rounded-t-xl" data-rd-scroll="services" href="index.html#services">NIF</a><a class="block w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium border-t border-gray-50" data-rd-scroll="services" href="index.html#services">NIF &amp; Tax Representative</a><div class="relative group/sub border-t border-gray-50 rounded-b-xl"><a class="w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium flex items-center justify-between rounded-b-xl" data-rd-scroll="other-legal-services" href="index.html#other-legal-services">Other Legal Services<svg class="lucide lucide-chevron-right w-4 h-4 text-gray-400 group-hover/sub:text-blue-600 transition-colors" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></a><div class="absolute top-0 left-full ml-1 w-64 bg-white border border-gray-100 shadow-xl rounded-xl opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 z-50 overflow-hidden transform origin-left -translate-x-2 group-hover/sub:translate-x-0"><div class="py-2"><a class="block w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium" data-rd-scroll="other-legal-services" href="index.html#other-legal-services">AIMA Documents Review</a><a class="block w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium border-t border-gray-50" data-rd-scroll="other-legal-services" href="index.html#other-legal-services">NIF Address Update</a><a class="block w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium border-t border-gray-50" data-rd-scroll="other-legal-services" href="index.html#other-legal-services">Legal Letters</a><a class="block w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium border-t border-gray-50" data-rd-scroll="other-legal-services" href="index.html#other-legal-services">Rental Contract Review</a></div></div></div></div></div></div><a class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors inline-block" data-rd-scroll="how-it-works" href="index.html#how-it-works">How it works</a><a class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors" href="articles.html">Articles</a><a class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors" href="faq.html">FAQ</a><a class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors" href="contacts.html">Contact</a><a href="form.html"><span class="inline-flex items-center justify-center whitespace-nowrap text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium" data-slot="button">Request Service</span></a></div><button aria-expanded="false" aria-label="Open menu" class="md:hidden p-2 text-gray-600 hover:text-blue-600 transition-colors" data-rd-nav-toggle="" type="button"><svg class="lucide lucide-menu h-6 w-6" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button></div></div>
+        <div class="md:hidden border-t border-gray-100 bg-white" data-rd-nav-mobile>
+          <div class="px-4 py-4 space-y-3">
+            <a href="about.html" class="block w-full text-left py-2 text-gray-600 font-medium">About Us</a>
+            <a href="index.html#services" data-rd-scroll="services" class="block w-full text-left py-2 text-gray-600 font-medium">Services</a>
+            <div class="pl-4 space-y-2 border-l-2 border-blue-50 ml-2 my-1">
+              <a href="index.html#services" data-rd-scroll="services" class="block w-full text-left py-1 text-sm text-gray-500 hover:text-blue-600 font-medium">NIF</a>
+              <a href="index.html#services" data-rd-scroll="services" class="block w-full text-left py-1 text-sm text-gray-500 hover:text-blue-600 font-medium">NIF &amp; Tax Representative</a>
+              <button type="button" data-rd-nav-subtoggle aria-expanded="false" class="w-full text-left py-1 text-sm text-gray-500 hover:text-blue-600 font-medium flex items-center justify-between">
+                Other Legal Services
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+              <div data-rd-nav-sub class="pl-4 space-y-2 mt-1 border-l border-gray-100 ml-2">
+                <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services" class="block w-full text-left py-1 text-xs text-gray-500 hover:text-blue-600 font-medium">AIMA Documents Review</a>
+                <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services" class="block w-full text-left py-1 text-xs text-gray-500 hover:text-blue-600 font-medium">NIF Address Update</a>
+                <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services" class="block w-full text-left py-1 text-xs text-gray-500 hover:text-blue-600 font-medium">Legal Letters</a>
+                <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services" class="block w-full text-left py-1 text-xs text-gray-500 hover:text-blue-600 font-medium">Rental Contract Review</a>
               </div>
-          <a href="index.html#how-it-works" data-rd-scroll="how-it-works" class="rd-nav__link">How it works</a>
-          <a href="articles.html" class="rd-nav__link">Articles</a>
-          <a href="faq.html" class="rd-nav__link">FAQ</a>
-          <a href="contacts.html" class="rd-nav__link">Contact</a>
-          <a href="form.html" class="rd-btn rd-btn--primary rd-btn--sm">Request Service</a>
-        </div>
-
-        <button class="rd-nav__toggle" type="button" data-rd-nav-toggle aria-expanded="false" aria-controls="rd-mobile-nav" aria-label="Open menu">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
-      </div>
-
-      <div class="rd-nav__mobile" id="rd-mobile-nav" data-rd-nav-mobile>
-        <a href="about.html">About Us</a>
-        <a href="index.html#services" data-rd-scroll="services">NIF</a>
-        <a href="index.html#services" data-rd-scroll="services">NIF &amp; Tax Representative</a>
-        <button type="button" data-rd-nav-subtoggle aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;">
-          Other Legal Services <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="rd-nav__mobile-sub" data-rd-nav-sub>
-                    <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services">AIMA Documents Review</a>
-                    <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services">NIF Address Update</a>
-                    <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services">Legal Letters</a>
-                    <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services">Rental Contract Review</a>
-        </div>
-        <a href="index.html#how-it-works" data-rd-scroll="how-it-works">How it works</a>
-        <a href="articles.html">Articles</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contacts.html">Contact</a>
-        <a href="form.html" class="rd-btn rd-btn--primary rd-btn--block" style="margin-top:0.75rem;">Request Service</a>
-      </div>
-    </nav>
-    <main id="main">
-      <div class="rd-article-progress" data-rd-article-progress></div>
-      <div class="rd-container rd-article-page">
-        <a href="articles.html" class="rd-article-back"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="20" y1="12" x2="4" y2="12"/><polyline points="11 5 4 12 11 19"/></svg> Back to articles</a>
-
-        <div class="rd-article-header">
-          <div class="rd-article-header__img">
-            <img src="assets/images/articles/discovering-portugal-regions.jpeg" alt="Discovering Portugal: A Guide to the Regions" loading="lazy" />
-            <span class="rd-article-header__pill">Guides</span>
+            </div>
+            <a href="index.html#how-it-works" data-rd-scroll="how-it-works" class="block w-full text-left py-2 text-gray-600 font-medium">How it works</a>
+            <a href="articles.html" class="block w-full text-left py-2 text-gray-600 font-medium">Articles</a>
+            <a href="faq.html" class="block w-full text-left py-2 text-gray-600 font-medium">FAQ</a>
+            <a href="contacts.html" class="block w-full text-left py-2 text-gray-600 font-medium">Contact</a>
+            <a href="form.html" class="block w-full mt-4"><span class="inline-flex items-center justify-center whitespace-nowrap text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium w-full">Request Service</span></a>
           </div>
-          <div class="rd-article-header__body">
-            <h1>Discovering Portugal: A Guide to the Regions</h1>
-            <div class="rd-article-header__meta">
-              <span class="rd-article-header__author"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg> NIF4Erasmus Team</span>
-              <span class="rd-article-header__date"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><line x1="3.5" y1="9.5" x2="20.5" y2="9.5"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg> March 15, 2026</span>
+        </div>
+</nav>
+    <main id="main" class="flex-grow">
+      <div class="bg-white">
+      <div class="fixed top-0 left-0 h-1 bg-blue-600 z-[60] transition-all duration-100" style="width:0%" data-rd-article-progress></div>
+      <div class="pt-24 pb-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <a href="articles.html" class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700 mb-10 group transition-colors"><svg class="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="20" y1="12" x2="4" y2="12"/><polyline points="11 5 4 12 11 19"/></svg>Back to articles</a>
+
+          <div class="bg-white rounded-3xl shadow-md overflow-hidden mb-12 border border-gray-100">
+            <div class="h-64 md:h-80 lg:h-[24rem] w-full relative">
+              <img src="assets/images/articles/discovering-portugal-regions.jpeg" alt="Discovering Portugal: A Guide to the Regions" class="w-full h-full object-cover" />
+              <div class="absolute top-6 left-6"><span class="bg-blue-600 text-white text-sm font-bold px-4 py-2 rounded-full uppercase tracking-wider shadow-md">Guides</span></div>
+            </div>
+            <div class="p-8 sm:p-12 lg:p-16">
+              <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-8">Discovering Portugal: A Guide to the Regions</h1>
+              <div class="flex flex-wrap items-center text-sm sm:text-base text-gray-600 gap-y-4">
+                <div class="flex items-center mr-8"><svg class="w-5 h-5 mr-2 text-blue-600" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><span class="font-semibold text-gray-900">NIF4Erasmus Team</span></div>
+                <div class="flex items-center"><svg class="w-5 h-5 mr-2 text-gray-400" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><line x1="3.5" y1="9.5" x2="20.5" y2="9.5"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg><span class="font-medium">March 15, 2026</span></div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="rd-article-body-grid">
-          <main>
-<div id="intro" class="rd-ab-section"><h2>Discovering Portugal: <span class="rd-accent">A Guide to the Regions</span></h2>
-<div class="rd-ab-intro">Portugal is one of the most popular destinations for Erasmus students, and it&rsquo;s not hard to understand why. Despite its relatively small size, the country offers an impressive diversity of landscapes, cultures, traditions, cuisine, and experiences.</div>
-<p class="rd-ab-p">From vibrant cities to historic villages, as well as beaches, mountains, and Atlantic islands, each region has something unique to offer, making Portugal one of Europe&rsquo;s most captivating destinations. With its mild climate, relatively affordable cost of living, and great cultural diversity, the country offers unique experiences in every region.</p>
-<p class="rd-ab-p">More than just a place to study, Portugal is an invitation to discover. According to the regional division used by the European Union, Portugal is organized into seven main regions: North, Central, Lisbon, Alentejo, Algarve, Azores, and Madeira. Each one reveals a different side of Portuguese identity, and this article is designed to help you explore each of them during your stay.</p>
+          <div class="flex flex-col lg:flex-row gap-16 relative">
+            <div class="flex-grow w-full">
+<div id="intro" class="mb-16 scroll-mt-32"><h2 class="text-2xl font-medium text-gray-800 mb-6">Discovering Portugal: <span class="text-blue-600">A Guide to the Regions</span></h2>
+<div class="text-lg text-gray-600 leading-relaxed mb-6">Portugal is one of the most popular destinations for Erasmus students, and it&rsquo;s not hard to understand why. Despite its relatively small size, the country offers an impressive diversity of landscapes, cultures, traditions, cuisine, and experiences.</div>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">From vibrant cities to historic villages, as well as beaches, mountains, and Atlantic islands, each region has something unique to offer, making Portugal one of Europe&rsquo;s most captivating destinations. With its mild climate, relatively affordable cost of living, and great cultural diversity, the country offers unique experiences in every region.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">More than just a place to study, Portugal is an invitation to discover. According to the regional division used by the European Union, Portugal is organized into seven main regions: North, Central, Lisbon, Alentejo, Algarve, Azores, and Madeira. Each one reveals a different side of Portuguese identity, and this article is designed to help you explore each of them during your stay.</p>
 </div>
 
-<div id="north" class="rd-ab-section"><h2>North: <span class="rd-accent">Tradition, Nature, and Urban Life</span></h2>
-<p class="rd-ab-p">Northern Portugal combines dynamic cities with impressive natural landscapes. The city of Porto is often the starting point, famous for its historic center, nightlife, and delicious Port wine. Other important cities include Braga, known for its religious heritage, and Guimar&atilde;es, considered the birthplace of Portugal.</p>
-<p class="rd-ab-p">For nature lovers, a visit to Peneda-Ger&ecirc;s National Park is a must! Here you can go hiking, swim in natural waterfalls, and explore traditional villages. In the summer, coastal towns like Viana do Castelo are ideal for relaxing by the sea.</p>
-<p class="rd-ab-p">The cuisine of the North is rich and comforting, and many consider it the best in the country due to the quality and abundance of the ingredients used in its preparation. One of the region&rsquo;s greatest treasures is the Douro, one of the world&rsquo;s oldest demarcated wine regions. Here, the Douro River winds through valleys covered with terraced vineyards, creating a unique landscape classified as a UNESCO World Heritage Site.</p>
+<div id="north" class="mb-16 scroll-mt-32"><h2 class="text-2xl font-medium text-gray-800 mb-6">North: <span class="text-blue-600">Tradition, Nature, and Urban Life</span></h2>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">Northern Portugal combines dynamic cities with impressive natural landscapes. The city of Porto is often the starting point, famous for its historic center, nightlife, and delicious Port wine. Other important cities include Braga, known for its religious heritage, and Guimar&atilde;es, considered the birthplace of Portugal.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">For nature lovers, a visit to Peneda-Ger&ecirc;s National Park is a must! Here you can go hiking, swim in natural waterfalls, and explore traditional villages. In the summer, coastal towns like Viana do Castelo are ideal for relaxing by the sea.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">The cuisine of the North is rich and comforting, and many consider it the best in the country due to the quality and abundance of the ingredients used in its preparation. One of the region&rsquo;s greatest treasures is the Douro, one of the world&rsquo;s oldest demarcated wine regions. Here, the Douro River winds through valleys covered with terraced vineyards, creating a unique landscape classified as a UNESCO World Heritage Site.</p>
 </div>
 
-<div id="central" class="rd-ab-section"><h2>Central: <span class="rd-accent">Between Mountains, Waves, History, and Tradition</span></h2>
-<p class="rd-ab-p">Central Portugal stands out for its diversity. The city of Coimbra, home to one of the oldest universities in Europe, is especially popular among students. Aveiro, often called the &ldquo;Portuguese Venice,&rdquo; charms visitors with its canals and colourful architecture.</p>
-<p class="rd-ab-p">Some of Portugal&rsquo;s most iconic places (and indeed of the world!) are found here. Nazar&eacute; is world-famous for its giant waves, making it a must-visit destination even for non-surfers. F&aacute;tima is one of the world&rsquo;s most important religious pilgrimage sites, attracting visitors from all cultures.</p>
-<p class="rd-ab-p">If you enjoy adventure, Serra da Estrela offers hiking trails, snow in winter, and stunning landscapes. For a more historical experience, visit &Oacute;bidos, a walled medieval town, or Tomar, which is linked to the Knights Templar.</p>
-<p class="rd-ab-p">In Central Portugal, Peniche also stands out as one of Europe&rsquo;s main surfing hotspots, known for its consistent waves, such as Supertubos beach. Although it is located relatively close to Lisbon, Peniche is administratively part of the Central region, which makes it an interesting example of how geographical proximity does not always match regional divisions. Beyond surfing, you can also explore the Berlengas Islands, a protected archipelago with crystal-clear waters and stunning natural landscapes, ideal for boat trips and diving.</p>
+<div id="central" class="mb-16 scroll-mt-32"><h2 class="text-2xl font-medium text-gray-800 mb-6">Central: <span class="text-blue-600">Between Mountains, Waves, History, and Tradition</span></h2>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">Central Portugal stands out for its diversity. The city of Coimbra, home to one of the oldest universities in Europe, is especially popular among students. Aveiro, often called the &ldquo;Portuguese Venice,&rdquo; charms visitors with its canals and colourful architecture.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">Some of Portugal&rsquo;s most iconic places (and indeed of the world!) are found here. Nazar&eacute; is world-famous for its giant waves, making it a must-visit destination even for non-surfers. F&aacute;tima is one of the world&rsquo;s most important religious pilgrimage sites, attracting visitors from all cultures.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">If you enjoy adventure, Serra da Estrela offers hiking trails, snow in winter, and stunning landscapes. For a more historical experience, visit &Oacute;bidos, a walled medieval town, or Tomar, which is linked to the Knights Templar.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">In Central Portugal, Peniche also stands out as one of Europe&rsquo;s main surfing hotspots, known for its consistent waves, such as Supertubos beach. Although it is located relatively close to Lisbon, Peniche is administratively part of the Central region, which makes it an interesting example of how geographical proximity does not always match regional divisions. Beyond surfing, you can also explore the Berlengas Islands, a protected archipelago with crystal-clear waters and stunning natural landscapes, ideal for boat trips and diving.</p>
 </div>
 
-<div id="lisbon" class="rd-ab-section"><h2>Lisbon: <span class="rd-accent">Culture, Nightlife, and International Energy</span></h2>
-<p class="rd-ab-p">The Lisbon region is the cosmopolitan heart of Portugal. The capital, Lisbon, is famous for its historic neighbourhoods, viewpoints, and vibrant cultural life. Old districts such as Alfama and Bairro Alto are perfect for exploring during the day and going out at night.</p>
-<p class="rd-ab-p">Lisbon is also an extremely cultural city: museums, concerts, festivals, and a strong connection to traditional Portuguese music, such as fado, are part of everyday life.</p>
-<p class="rd-ab-p">In the surrounding area, there are destinations you can&rsquo;t miss:</p>
-<ul class="rd-ab-list">
-<li><span>Costa da Caparica &ndash; known for its long beaches and relaxed atmosphere</span></li>
-<li><span>Ericeira &ndash; one of Europe&rsquo;s best surfing reserves</span></li>
-<li><span>Sintra &ndash; with palaces and fairytale-like landscapes</span></li>
-<li><span>Cascais &ndash; ideal for a more sophisticated beach day</span></li>
-<li><span>Mafra &ndash; home to the impressive convent and a strong historical heritage</span></li>
-<li><span>Set&uacute;bal &ndash; known for its fresh fish and proximity to the Serra da Arr&aacute;bida</span></li>
+<div id="lisbon" class="mb-16 scroll-mt-32"><h2 class="text-2xl font-medium text-gray-800 mb-6">Lisbon: <span class="text-blue-600">Culture, Nightlife, and International Energy</span></h2>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">The Lisbon region is the cosmopolitan heart of Portugal. The capital, Lisbon, is famous for its historic neighbourhoods, viewpoints, and vibrant cultural life. Old districts such as Alfama and Bairro Alto are perfect for exploring during the day and going out at night.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">Lisbon is also an extremely cultural city: museums, concerts, festivals, and a strong connection to traditional Portuguese music, such as fado, are part of everyday life.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">In the surrounding area, there are destinations you can&rsquo;t miss:</p>
+<ul class="space-y-3 my-6 ml-4">
+<li class="flex items-start"><div class="mt-2 w-1.5 h-1.5 rounded-full bg-blue-600 mr-3 flex-shrink-0"></div><span class="text-gray-600 text-lg leading-relaxed">Costa da Caparica &ndash; known for its long beaches and relaxed atmosphere</span></li>
+<li class="flex items-start"><div class="mt-2 w-1.5 h-1.5 rounded-full bg-blue-600 mr-3 flex-shrink-0"></div><span class="text-gray-600 text-lg leading-relaxed">Ericeira &ndash; one of Europe&rsquo;s best surfing reserves</span></li>
+<li class="flex items-start"><div class="mt-2 w-1.5 h-1.5 rounded-full bg-blue-600 mr-3 flex-shrink-0"></div><span class="text-gray-600 text-lg leading-relaxed">Sintra &ndash; with palaces and fairytale-like landscapes</span></li>
+<li class="flex items-start"><div class="mt-2 w-1.5 h-1.5 rounded-full bg-blue-600 mr-3 flex-shrink-0"></div><span class="text-gray-600 text-lg leading-relaxed">Cascais &ndash; ideal for a more sophisticated beach day</span></li>
+<li class="flex items-start"><div class="mt-2 w-1.5 h-1.5 rounded-full bg-blue-600 mr-3 flex-shrink-0"></div><span class="text-gray-600 text-lg leading-relaxed">Mafra &ndash; home to the impressive convent and a strong historical heritage</span></li>
+<li class="flex items-start"><div class="mt-2 w-1.5 h-1.5 rounded-full bg-blue-600 mr-3 flex-shrink-0"></div><span class="text-gray-600 text-lg leading-relaxed">Set&uacute;bal &ndash; known for its fresh fish and proximity to the Serra da Arr&aacute;bida</span></li>
 </ul>
-<p class="rd-ab-p">In the Serra da Arr&aacute;bida, you can find some of the most beautiful beaches in Portugal, with crystal-clear waters and protected landscapes. Lisbon is also an excellent starting point for trips across the country.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">In the Serra da Arr&aacute;bida, you can find some of the most beautiful beaches in Portugal, with crystal-clear waters and protected landscapes. Lisbon is also an excellent starting point for trips across the country.</p>
 </div>
 
-<div id="alentejo" class="rd-ab-section"><h2>Alentejo: <span class="rd-accent">Tranquillity, Gastronomy, and Authenticity</span></h2>
-<p class="rd-ab-p">Alentejo offers a slower and more authentic pace of life. The city of &Eacute;vora, a UNESCO World Heritage Site, is one of its main highlights, featuring Roman ruins and beautifully preserved historic architecture.</p>
-<p class="rd-ab-p">Other places such as Monsaraz offer incredible views over the Alentejo countryside. This region is perfect for those who want to relax, taste local wines, and enjoy traditional cuisine. On the coast, beaches like those in Vila Nova de Milfontes and Zambujeira do Mar are less touristy and extremely beautiful, ideal for those seeking quieter seaside spots.</p>
-<p class="rd-ab-p">Traditionally a region strongly focused on agriculture and livestock farming, its cuisine is one of its greatest highlights, often accompanied by regional wines, making this region a true gastronomic paradise.</p>
+<div id="alentejo" class="mb-16 scroll-mt-32"><h2 class="text-2xl font-medium text-gray-800 mb-6">Alentejo: <span class="text-blue-600">Tranquillity, Gastronomy, and Authenticity</span></h2>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">Alentejo offers a slower and more authentic pace of life. The city of &Eacute;vora, a UNESCO World Heritage Site, is one of its main highlights, featuring Roman ruins and beautifully preserved historic architecture.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">Other places such as Monsaraz offer incredible views over the Alentejo countryside. This region is perfect for those who want to relax, taste local wines, and enjoy traditional cuisine. On the coast, beaches like those in Vila Nova de Milfontes and Zambujeira do Mar are less touristy and extremely beautiful, ideal for those seeking quieter seaside spots.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">Traditionally a region strongly focused on agriculture and livestock farming, its cuisine is one of its greatest highlights, often accompanied by regional wines, making this region a true gastronomic paradise.</p>
 </div>
 
-<div id="algarve" class="rd-ab-section"><h2>Algarve: <span class="rd-accent">Sun, Beaches, and Social Life</span></h2>
-<p class="rd-ab-p">Algarve is the most famous region during the summer and the favourite holiday destination for Portuguese people. Towns such as Albufeira are known for their nightlife, while Lagos combines stunning beaches with history. Vilamoura is another hotspot for entertainment, with its marina, bars, and more upscale clubs.</p>
-<p class="rd-ab-p">For impressive natural landscapes, visit Sagres, at the southwestern tip of Europe.</p>
-<p class="rd-ab-p">Algarve is ideal for parties, water activities, and relaxed days in the sun. Here you can enjoy water sports, boat trips, and explore caves and cliffs, and of course, make the most of the sunshine almost all year round.</p>
+<div id="algarve" class="mb-16 scroll-mt-32"><h2 class="text-2xl font-medium text-gray-800 mb-6">Algarve: <span class="text-blue-600">Sun, Beaches, and Social Life</span></h2>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">Algarve is the most famous region during the summer and the favourite holiday destination for Portuguese people. Towns such as Albufeira are known for their nightlife, while Lagos combines stunning beaches with history. Vilamoura is another hotspot for entertainment, with its marina, bars, and more upscale clubs.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">For impressive natural landscapes, visit Sagres, at the southwestern tip of Europe.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">Algarve is ideal for parties, water activities, and relaxed days in the sun. Here you can enjoy water sports, boat trips, and explore caves and cliffs, and of course, make the most of the sunshine almost all year round.</p>
 </div>
 
-<div id="azores" class="rd-ab-section"><h2>Azores: <span class="rd-accent">Wild Nature and Adventure</span></h2>
-<p class="rd-ab-p">Azores are a Portuguese archipelago located in the Atlantic Ocean, made up of nine volcanic islands. They are a true paradise for nature lovers. S&atilde;o Miguel Island, where Ponta Delgada is located, offers volcanic lakes such as Sete Cidades and unique landscapes.</p>
-<p class="rd-ab-p">Here you can go hiking, watch whales, swim in thermal waters, and explore an almost untouched natural environment. It is a perfect destination for quieter and more unique getaways.</p>
-<p class="rd-ab-p">But the Azorean experience goes far beyond its landscapes. The cuisine is unique, with standout dishes such as &ldquo;cozido das Furnas&rdquo; (slow-cooked using volcanic heat), fresh fish, and high-quality local products. The close connection to nature, combined with the authenticity of the food, makes this region truly special. Exploring the Azores islands will undoubtedly be a memorable experience, given their natural beauty and their distinct character compared to the rest of Portugal&rsquo;s regions.</p>
+<div id="azores" class="mb-16 scroll-mt-32"><h2 class="text-2xl font-medium text-gray-800 mb-6">Azores: <span class="text-blue-600">Wild Nature and Adventure</span></h2>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">Azores are a Portuguese archipelago located in the Atlantic Ocean, made up of nine volcanic islands. They are a true paradise for nature lovers. S&atilde;o Miguel Island, where Ponta Delgada is located, offers volcanic lakes such as Sete Cidades and unique landscapes.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">Here you can go hiking, watch whales, swim in thermal waters, and explore an almost untouched natural environment. It is a perfect destination for quieter and more unique getaways.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">But the Azorean experience goes far beyond its landscapes. The cuisine is unique, with standout dishes such as &ldquo;cozido das Furnas&rdquo; (slow-cooked using volcanic heat), fresh fish, and high-quality local products. The close connection to nature, combined with the authenticity of the food, makes this region truly special. Exploring the Azores islands will undoubtedly be a memorable experience, given their natural beauty and their distinct character compared to the rest of Portugal&rsquo;s regions.</p>
 </div>
 
-<div id="madeira" class="rd-ab-section"><h2>Madeira: <span class="rd-accent">Subtropical Climate and Lush Landscapes</span></h2>
-<p class="rd-ab-p">Madeira is a Portuguese archipelago, also located in the Atlantic Ocean, made up of four main islands: Madeira, Porto Santo, Desertas, and Selvagens (the latter two are uninhabited). Madeira combines nature, a pleasant climate, and unique experiences. The city of Funchal is the centre of life on the island, with markets, gardens, and cultural events.</p>
-<p class="rd-ab-p">One of the most popular activities is walking the &ldquo;levadas,&rdquo; which are trails that follow irrigation channels and offer spectacular views. The island is also excellent for hiking, boat trips, and exploring impressive cliffs.</p>
-<p class="rd-ab-p">But Madeira is also known for its cuisine: espetada madeirense, bolo do caco, and fresh fish are must-tries. Traditional drinks are another highlight. The famous Madeira Wine is internationally renowned, and poncha (a traditional drink made with sugarcane spirit) is an essential experience for anyone visiting the island.</p>
-<p class="rd-ab-p">New Year&rsquo;s Eve in Madeira is also a unique experience, as from a high viewpoint on the island you can see multiple fireworks displays, creating a truly unique and unforgettable scene.</p>
+<div id="madeira" class="mb-16 scroll-mt-32"><h2 class="text-2xl font-medium text-gray-800 mb-6">Madeira: <span class="text-blue-600">Subtropical Climate and Lush Landscapes</span></h2>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">Madeira is a Portuguese archipelago, also located in the Atlantic Ocean, made up of four main islands: Madeira, Porto Santo, Desertas, and Selvagens (the latter two are uninhabited). Madeira combines nature, a pleasant climate, and unique experiences. The city of Funchal is the centre of life on the island, with markets, gardens, and cultural events.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">One of the most popular activities is walking the &ldquo;levadas,&rdquo; which are trails that follow irrigation channels and offer spectacular views. The island is also excellent for hiking, boat trips, and exploring impressive cliffs.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">But Madeira is also known for its cuisine: espetada madeirense, bolo do caco, and fresh fish are must-tries. Traditional drinks are another highlight. The famous Madeira Wine is internationally renowned, and poncha (a traditional drink made with sugarcane spirit) is an essential experience for anyone visiting the island.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">New Year&rsquo;s Eve in Madeira is also a unique experience, as from a high viewpoint on the island you can see multiple fireworks displays, creating a truly unique and unforgettable scene.</p>
 </div>
 
-<div id="conclusion" class="rd-ab-section"><h2><span class="rd-accent">Conclusion</span></h2>
-<p class="rd-ab-p">Living in Portugal as an Erasmus student is much more than attending classes, it&rsquo;s an opportunity to explore a diverse country full of personality! Each region offers unique experiences, from parties and beaches to nature, history, gastronomy, and culture.</p>
-<p class="rd-ab-p">No matter where you are based, travelling around the country is easy and affordable, so make the most of it and discover everything that Portugal has to offer.</p>
-<p class="rd-ab-p">In conclusion, it is important to emphasise that this article presents only a selection of the many destinations Portugal has to offer. The country is full of unique places, each with its own charm, history, and identity. Therefore, you should not limit your travels to the locations mentioned here, as there are countless lesser-known spots that may surprise you. Depending on your interests, whether nature, culture, nightlife, or tranquillity, you will be able to find other destinations that are equally suited to what you are looking for.</p>
-<p class="rd-ab-p">Exploring Portugal is, above all, about letting yourself be guided by discovery!</p>
+<div id="conclusion" class="mb-16 scroll-mt-32"><h2 class="text-2xl font-medium text-gray-800 mb-6"><span class="text-blue-600">Conclusion</span></h2>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">Living in Portugal as an Erasmus student is much more than attending classes, it&rsquo;s an opportunity to explore a diverse country full of personality! Each region offers unique experiences, from parties and beaches to nature, history, gastronomy, and culture.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">No matter where you are based, travelling around the country is easy and affordable, so make the most of it and discover everything that Portugal has to offer.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">In conclusion, it is important to emphasise that this article presents only a selection of the many destinations Portugal has to offer. The country is full of unique places, each with its own charm, history, and identity. Therefore, you should not limit your travels to the locations mentioned here, as there are countless lesser-known spots that may surprise you. Depending on your interests, whether nature, culture, nightlife, or tranquillity, you will be able to find other destinations that are equally suited to what you are looking for.</p>
+<p class="text-lg text-gray-600 leading-relaxed mb-6">Exploring Portugal is, above all, about letting yourself be guided by discovery!</p>
 </div>
 
-            <div class="rd-article-cta">
-              <h3>Need help getting your NIF for the Navegante Pass?</h3>
-              <p>Skip the queues and bureaucracy. Our lawyers represent you before the Portuguese Tax Authority so you can get your NIF without the stress, and start travelling for free.</p>
-              <a href="form.html" class="rd-btn rd-btn--on-blue">Request NIF Assistance</a>
-            </div>
-
-            <div class="rd-article-next">
-              <div class="rd-article-next__head">
-                <h3>Read next</h3>
-                <a href="articles.html">View all <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></a>
-              </div>
-              <a href="renting-no-scams.html" class="rd-article-next-card">
-                <div class="rd-article-next-card__img"><img src="assets/images/articles/renting-no-scams.jpeg" alt="Renting a House or Room in Portugal Without Falling for Scams" loading="lazy" /></div>
-                <div class="rd-article-next-card__body">
-                  <span class="rd-article-next-card__pill">Living</span>
-                  <h4>Renting a House or Room in Portugal Without Falling for Scams</h4>
-                  <p>Explore more essential guides for your stay in Portugal and make your transition smoother.</p>
+              <div class="mt-16 bg-blue-600 rounded-3xl p-10 text-white relative overflow-hidden group">
+                <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                <div class="relative z-10 text-center sm:text-left">
+                  <h3 class="text-3xl font-bold mb-4 tracking-tight">Need help getting your NIF for the Navegante Pass?</h3>
+                  <p class="text-blue-100 text-xl mb-8 leading-relaxed max-w-2xl">Skip the queues and bureaucracy. Our lawyers represent you before the Portuguese Tax Authority so you can get your NIF without the stress, and start travelling for free.</p>
+                  <a href="form.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap shrink-0 outline-none h-9 bg-white text-blue-600 hover:bg-gray-100 font-bold px-10 py-6 text-lg rounded-2xl shadow-xl transition-all hover:scale-105">Request NIF Assistance</a>
                 </div>
-              </a>
+              </div>
+
+              <div class="mt-24">
+                <div class="flex items-center justify-between mb-8">
+                  <h3 class="text-2xl font-bold text-gray-900">Read next</h3>
+                  <a href="articles.html" class="text-blue-600 font-bold hover:underline flex items-center gap-1">View all <svg class="w-4 h-4" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></a>
+                </div>
+                <a href="renting-no-scams.html" class="group block bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                  <div class="flex flex-col md:flex-row h-full">
+                    <div class="md:w-1/3 aspect-[4/3] md:aspect-square overflow-hidden"><img src="assets/images/articles/renting-no-scams.jpeg" alt="Renting a House or Room in Portugal Without Falling for Scams" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" /></div>
+                    <div class="p-8 flex flex-col justify-center md:w-2/3">
+                      <span class="text-blue-600 text-sm font-bold uppercase tracking-wider mb-2">Living</span>
+                      <h4 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">Renting a House or Room in Portugal Without Falling for Scams</h4>
+                      <p class="text-gray-500 line-clamp-2">Explore more essential guides for your stay in Portugal and make your transition smoother.</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div>
-          </main>
+          </div>
         </div>
+      </div>
       </div>
 
     </main>
-    <footer class="rd-footer">
-      <div class="rd-container">
-        <div class="rd-footer__grid">
-          <div>
-            <div class="rd-footer__logo">
-              <img src="assets/images/logo.png" alt="NIF4Erasmus" width="104" height="32" loading="lazy" />
-            </div>
-            <p style="font-size:0.9rem;line-height:1.6;max-width:22rem;">Helping international students get their Portuguese NIF without the stress.</p>
-          </div>
-
-          <div>
-            <h4>Services</h4>
-            <ul>
-              <li><a href="form.html">NIF (Portuguese Tax Number)</a></li>
-              <li><a href="form.html">NIF and Tax Representative</a></li>
-              <li><a href="index.html#other-legal-services" data-rd-scroll="other-legal-services">Other Legal Services</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4>Support</h4>
-            <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="contacts.html">Contact Us</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4>Contact</h4>
-            <ul style="margin-bottom:1.5rem;">
-              <li><a href="mailto:info@nif4erasmus.com">info@nif4erasmus.com</a></li>
-            </ul>
-
-            <div class="rd-footer__social">
-            <a href="https://www.instagram.com/nif4erasmus/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="rd-footer__social-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-            <a href="https://www.facebook.com/people/NIF-4-Erasmus/61571569951503/?locale=pt_PT" target="_blank" rel="noopener" aria-label="Facebook"><svg class="rd-footer__social-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-            <a href="https://www.tiktok.com/@nif4erasmus" target="_blank" rel="noopener" aria-label="TikTok"><svg class="rd-footer__social-icon" fill="currentColor" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.12-3.44-3.17-3.64-5.46-.22-2.18.73-4.4 2.46-5.71 1.48-1.12 3.42-1.57 5.25-1.19.01 1.38-.01 2.76.01 4.14-.94-.28-1.95-.3-2.88.08-1.15.48-1.89 1.6-1.84 2.84.05 1.25.96 2.31 2.18 2.61 1.41.34 2.91-.25 3.65-1.47.38-.63.53-1.36.5-2.09.04-5.32 0-10.65.02-15.98z"/></svg></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="rd-footer__bottom">
-          <div>&copy; 2025 NIF4Erasmus. All rights reserved.</div>
-          <div class="rd-footer__bottom-links">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-conditions.html">Terms of Service</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <footer class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900 text-gray-400"><div class="max-w-7xl mx-auto"><div class="grid md:grid-cols-4 gap-12 mb-12"><div><div class="mb-6"><img alt="NIF4Erasmus" class="h-8 w-auto brightness-0 invert opacity-90" src="assets/fg/logo-no-background-CCiE5oLl.png"/></div><p class="text-sm leading-relaxed font-medium">Helping international students get their Portuguese NIF without the stress.</p></div><div><h4 class="text-white font-bold mb-6">Services</h4><ul class="space-y-4 text-sm font-medium"><li><a class="hover:text-white transition-colors text-sm" href="form.html">NIF (Portuguese Tax Number)</a></li><li><a class="hover:text-white transition-colors text-sm" href="form.html">NIF and Tax Representative</a></li><li><a class="hover:text-white transition-colors text-left w-full text-sm inline-block" data-rd-scroll="other-legal-services" href="index.html#other-legal-services">Other Legal Services</a></li></ul></div><div><h4 class="text-white font-bold mb-6">Support</h4><ul class="space-y-4 text-sm font-medium"><li><a class="hover:text-white transition-colors" href="about.html">About Us</a></li><li><a class="hover:text-white transition-colors" href="faq.html">FAQ</a></li><li><a class="hover:text-white transition-colors" href="contacts.html">Contact Us</a></li></ul></div><div><h4 class="text-white font-bold mb-6">Contact</h4><ul class="space-y-4 text-sm font-medium"><li>info@nif4erasmus.com</li></ul><div class="mt-6 flex gap-4"><a aria-label="Instagram" class="text-gray-400 hover:text-white transition-colors" href="https://www.instagram.com/nif4erasmus/" rel="noopener noreferrer" target="_blank"><svg class="lucide lucide-instagram w-5 h-5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a><a aria-label="Facebook" class="text-gray-400 hover:text-white transition-colors" href="https://www.facebook.com/people/NIF-4-Erasmus/61571569951503/?locale=pt_PT" rel="noopener noreferrer" target="_blank"><svg class="lucide lucide-facebook w-5 h-5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a><a aria-label="TikTok" class="text-gray-400 hover:text-white transition-colors" href="https://www.tiktok.com/@nif4erasmus" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.12-3.44-3.17-3.64-5.46-.22-2.18.73-4.4 2.46-5.71 1.48-1.12 3.42-1.57 5.25-1.19.01 1.38-.01 2.76.01 4.14-.94-.28-1.95-.3-2.88.08-1.15.48-1.89 1.6-1.84 2.84.05 1.25.96 2.31 2.18 2.61 1.41.34 2.91-.25 3.65-1.47.38-.63.53-1.36.5-2.09.04-5.32 0-10.65.02-15.98z"></path></svg></a></div></div></div><div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-medium"><div>© 2025 NIF4Erasmus. All rights reserved.</div><div class="flex gap-8"><a class="hover:text-white transition-colors" href="privacy-policy.html">Privacy Policy</a><a class="hover:text-white transition-colors" href="terms-conditions.html">Terms of Service</a></div></div></div></footer>
 
     <script src="scripts/main.js" defer></script>
     <script src="assets/js/redesign.js" defer></script>
+  </div>
   </body>
 </html>

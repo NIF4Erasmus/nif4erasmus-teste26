@@ -1,3 +1,4 @@
+@layer legacy {
 /* ==========================================================================
    NIF4Erasmus — Redesign (Phase 1)
    Design tokens taken from the Figma Make project ("Redesign Erasmus NIF
@@ -602,4 +603,5 @@ body.rd {
 .rd-skip-link:focus {
   left: 1rem;
   top: 1rem;
+}
 }

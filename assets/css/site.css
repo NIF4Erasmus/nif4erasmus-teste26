@@ -1,0 +1,58 @@
+/* Small, unlayered helpers for behaviours that Tailwind does not provide statically. */
+[data-rd-nav-mobile] { display: none; }
+[data-rd-nav-mobile].is-open { display: block; }
+@media (min-width: 768px) { [data-rd-nav-mobile] { display: none !important; } }
+[data-rd-nav-sub] { display: none; }
+[data-rd-nav-sub].is-open { display: block; }
+/* keyboard access for the desktop dropdown (Tailwind only styles :hover) */
+nav .group:focus-within > div:not(.py-2) { opacity: 1; visibility: visible; transform: translateY(0); }
+nav .group\/sub:focus-within > div { opacity: 1; visibility: visible; transform: translateX(0); }
+.rd-skip-link { position: absolute; left: -999px; top: auto; z-index: 100; background: #2563eb; color: #fff; padding: .75rem 1.25rem; border-radius: .5rem; }
+.rd-skip-link:focus { left: 1rem; top: 1rem; }
+
+/* native <select> that mimics the design's select trigger */
+select.rd-native-select { -webkit-appearance: none; appearance: none; padding-right: 2.25rem; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-opacity='.5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right .75rem center; }
+select.rd-native-select:invalid { color: #717182; }
+select.rd-native-select:focus-visible { outline: none; border-color: var(--color-ring, #a1a1aa); box-shadow: 0 0 0 3px rgb(161 161 170 / .5); }
+.form-status { margin-top: .75rem; font-size: .875rem; font-weight: 500; text-align: center; }
+.form-status:empty { display: none; }
+.form-status.success { color: #15803d; }
+.form-status.error { color: #dc2626; }
+.form-status.sending { color: #4b5563; }
+
+/* FAQ accordion (native <details>, styled like the design's accordion) */
+.faq-item > summary { list-style: none; }
+.faq-item > summary::-webkit-details-marker { display: none; }
+.faq-item[open] { background-color: rgb(239 246 255 / 0.5); }
+.faq-item[open] > summary > svg { transform: rotate(180deg); }
+.faq-item > summary:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+.faq-answer p { margin: 0 0 .75rem; }
+.faq-answer p:last-child { margin-bottom: 0; }
+.faq-answer ul { list-style: disc; padding-left: 1.25rem; margin: 0 0 .75rem; }
+.faq-answer ol { list-style: decimal; padding-left: 1.25rem; margin: 0 0 .75rem; }
+.faq-answer li { margin-bottom: .25rem; }
+.faq-answer a { color: #2563eb; text-decoration: underline; }
+.faq-answer strong { font-weight: 700; color: #111827; }
+
+.faq-item.faq-last{border-bottom-width:0;margin-bottom:0}
+
+/* ---- order form: wizard states (Figma look, driven by main.js classes) ---- */
+.progress-step .step-number{width:2.5rem;height:2.5rem;border-radius:9999px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.875rem;line-height:1.25rem;margin-bottom:.75rem;border:2px solid #d1d5db;color:#9ca3af;background:#fff;opacity:.8;transition:all .5s ease-out}
+.progress-step .step-name{font-size:.75rem;line-height:1rem;text-align:center;font-weight:500;color:#9ca3af;transition:all .5s}
+.progress-step.active:not(.current) .step-number{background:#155dfc;border-color:#155dfc;color:#fff;box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);opacity:1}
+.progress-step.current .step-number{border-color:#155dfc;color:#155dfc;background:#fff;box-shadow:0 0 0 4px #eff6ff;transform:scale(1.1);opacity:1}
+.progress-step.active .step-name{color:#1447e6}
+.progress-step.current .step-name{color:#155dfc;font-weight:700}
+.form-section{display:none}
+.form-section.active{display:block}
+.next-btn.is-incomplete,.next-btn:disabled{background:#d1d5db;color:#4b5563}
+.next-btn.is-incomplete:hover{background:#d1d5db}
+.submit-btn.is-incomplete,.submit-btn:disabled{opacity:.5;filter:grayscale(1)}
+.form-section input.error,.form-section select.error{border-color:#ef4444}
+.scrollbar-hide{-ms-overflow-style:none;scrollbar-width:none}.scrollbar-hide::-webkit-scrollbar{display:none}
+form [hidden]{display:none!important}
+#countryTips > div{margin-top:.25rem}
+.rd-order-cols li::before{content:"• ";color:#9ca3af}
+.rd-order-list li::before{content:"• "}

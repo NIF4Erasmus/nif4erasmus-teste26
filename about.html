@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-<meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us | NIF4Erasmus</title>
@@ -24,8 +24,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png" />
     <link rel="manifest" href="assets/favicon_io/site.webmanifest" />
 
+    <style>@layer theme, base, legacy, components, utilities;</style>
+    <link rel="stylesheet" href="assets/css/figma.css" />
     <link rel="stylesheet" href="assets/css/redesign.css" />
     <link rel="stylesheet" href="assets/css/redesign-pages.css" />
+    <link rel="stylesheet" href="assets/css/site.css" />
 
     <!-- EmailJS (contact form + footer callback widget) -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -37,193 +40,43 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
   </head>
-  <body class="rd">
-    <a class="rd-skip-link" href="#main">Skip to content</a>
-    <nav class="rd-nav">
-      <div class="rd-nav__bar">
-        <a href="index.html" class="rd-nav__logo" aria-label="NIF4Erasmus home">
-          <img src="assets/images/logo.png" alt="NIF4Erasmus" width="104" height="32" />
-        </a>
-
-        <div class="rd-nav__links">
-          <a href="about.html" class="rd-nav__link">About Us</a>
-              <div class="rd-nav__dropdown">
-                <button class="rd-nav__link" type="button">Services</button>
-                <div class="rd-nav__menu">
-                  <a href="index.html#services" data-rd-scroll="services">NIF</a>
-                  <a href="index.html#services" data-rd-scroll="services">NIF &amp; Tax Representative</a>
-                  <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services">Other Legal Services</a>
-                </div>
-              </div>
-          <a href="index.html#how-it-works" data-rd-scroll="how-it-works" class="rd-nav__link">How it works</a>
-          <a href="articles.html" class="rd-nav__link">Articles</a>
-          <a href="faq.html" class="rd-nav__link">FAQ</a>
-          <a href="contacts.html" class="rd-nav__link">Contact</a>
-          <a href="form.html" class="rd-btn rd-btn--primary rd-btn--sm">Request Service</a>
-        </div>
-
-        <button class="rd-nav__toggle" type="button" data-rd-nav-toggle aria-expanded="false" aria-controls="rd-mobile-nav" aria-label="Open menu">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
-      </div>
-
-      <div class="rd-nav__mobile" id="rd-mobile-nav" data-rd-nav-mobile>
-        <a href="about.html">About Us</a>
-        <a href="index.html#services" data-rd-scroll="services">NIF</a>
-        <a href="index.html#services" data-rd-scroll="services">NIF &amp; Tax Representative</a>
-        <button type="button" data-rd-nav-subtoggle aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;">
-          Other Legal Services <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="rd-nav__mobile-sub" data-rd-nav-sub>
-                    <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services">AIMA Documents Review</a>
-                    <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services">NIF Address Update</a>
-                    <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services">Legal Letters</a>
-                    <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services">Rental Contract Review</a>
-        </div>
-        <a href="index.html#how-it-works" data-rd-scroll="how-it-works">How it works</a>
-        <a href="articles.html">Articles</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contacts.html">Contact</a>
-        <a href="form.html" class="rd-btn rd-btn--primary rd-btn--block" style="margin-top:0.75rem;">Request Service</a>
-      </div>
-    </nav>
-    <main id="main">
-      <section class="rd-section" style="background:var(--blue-50);padding-top:3.5rem;padding-bottom:3.5rem;">
-        <div class="rd-container rd-center" style="max-width:48rem;">
-          <h1 class="rd-h1">About <span class="rd-accent">NIF4Erasmus</span></h1>
-          <p class="rd-lede">We are a team of young lawyers dedicated to helping international students easily obtain their NIF, so you can focus on enjoying your experience in Portugal.</p>
-        </div>
-      </section>
-
-      <section class="rd-section">
-        <div class="rd-container">
-          <div class="rd-about-hero">
-            <img src="assets/images/figma/about-hero-figma.jpeg" alt="Hand holding a small globe" loading="lazy" />
-            <div>
-              <h2 class="rd-h2" style="margin-bottom:1rem;">Why choose <span class="rd-accent">NIF4Erasmus</span>?</h2>
-              <p class="rd-lede" style="margin-bottom:2rem;">We built this service because we saw too many international students struggle with Portuguese bureaucracy. Our mission is to make your transition smooth.</p>
-              <div class="rd-reason-list">
-              <div class="rd-reason">
-                <div class="rd-reason__icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></svg></div>
-                <div>
-                  <h3>Lightning Fast</h3>
-                  <p>Get your NIF in an estimated 2–5 business days. Processing times depend on the Portuguese Tax Authority and may vary.</p>
-                </div>
-              </div>
-              <div class="rd-reason">
-                <div class="rd-reason__icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 20 6v6c0 5-3.5 8-8 9.5C7.5 20 4 17 4 12V6l8-3.5Z"/><polyline points="8.5 12 11 14.5 15.5 9.5"/></svg></div>
-                <div>
-                  <h3>100% Secure &amp; Legal</h3>
-                  <p>Our lawyers work directly with the Portuguese Tax Authority. Your data is protected and our process is fully compliant.</p>
-                </div>
-              </div>
-              <div class="rd-reason">
-                <div class="rd-reason__icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7.5c-1.4-2-3.3-3-5.2-2.6C4.6 5.3 3 7.2 3 9.4c0 3.6 4.3 6.8 9 10.6 2.3-1.9 4.5-3.6 6.2-5.3"/><path d="M14.5 8.5c1.6-2.6 4-3.8 6-3 2 .8 2.8 3.2 1.8 5.3"/><path d="M9 12.5l2 1.8 2.3-2.3 2 1.8"/></svg></div>
-                <div>
-                  <h3>Student-First Support</h3>
-                  <p>We are the only legal service in Portugal fully dedicated to helping international students.</p>
-                </div>
-              </div>
+  <body>
+  <div class="min-h-screen bg-white text-gray-900 font-sans flex flex-col">
+    <a class="rd-skip-link" href="#main">Skip to main content</a>
+    <nav aria-label="Main" class="relative w-full bg-white border-b border-gray-100 z-50"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a class="flex items-center gap-2 cursor-pointer" href="index.html"><img alt="NIF4Erasmus" class="h-8 w-auto object-contain" src="assets/fg/logo-no-background-CCiE5oLl.png"/></a><div class="hidden md:flex items-center gap-8"><a class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors" href="about.html">About Us</a><div class="relative group"><a class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors py-2 inline-block" data-rd-scroll="services" href="index.html#services">Services</a><div class="absolute top-full left-0 w-64 bg-white border border-gray-100 shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform origin-top -translate-y-2 group-hover:translate-y-0"><div class="py-2"><a class="block w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium rounded-t-xl" data-rd-scroll="services" href="index.html#services">NIF</a><a class="block w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium border-t border-gray-50" data-rd-scroll="services" href="index.html#services">NIF &amp; Tax Representative</a><div class="relative group/sub border-t border-gray-50 rounded-b-xl"><a class="w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium flex items-center justify-between rounded-b-xl" data-rd-scroll="other-legal-services" href="index.html#other-legal-services">Other Legal Services<svg class="lucide lucide-chevron-right w-4 h-4 text-gray-400 group-hover/sub:text-blue-600 transition-colors" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></a><div class="absolute top-0 left-full ml-1 w-64 bg-white border border-gray-100 shadow-xl rounded-xl opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 z-50 overflow-hidden transform origin-left -translate-x-2 group-hover/sub:translate-x-0"><div class="py-2"><a class="block w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium" data-rd-scroll="other-legal-services" href="index.html#other-legal-services">AIMA Documents Review</a><a class="block w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium border-t border-gray-50" data-rd-scroll="other-legal-services" href="index.html#other-legal-services">NIF Address Update</a><a class="block w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium border-t border-gray-50" data-rd-scroll="other-legal-services" href="index.html#other-legal-services">Legal Letters</a><a class="block w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium border-t border-gray-50" data-rd-scroll="other-legal-services" href="index.html#other-legal-services">Rental Contract Review</a></div></div></div></div></div></div><a class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors inline-block" data-rd-scroll="how-it-works" href="index.html#how-it-works">How it works</a><a class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors" href="articles.html">Articles</a><a class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors" href="faq.html">FAQ</a><a class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors" href="contacts.html">Contact</a><a href="form.html"><span class="inline-flex items-center justify-center whitespace-nowrap text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium" data-slot="button">Request Service</span></a></div><button aria-expanded="false" aria-label="Open menu" class="md:hidden p-2 text-gray-600 hover:text-blue-600 transition-colors" data-rd-nav-toggle="" type="button"><svg class="lucide lucide-menu h-6 w-6" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button></div></div>
+        <div class="md:hidden border-t border-gray-100 bg-white" data-rd-nav-mobile>
+          <div class="px-4 py-4 space-y-3">
+            <a href="about.html" class="block w-full text-left py-2 text-gray-600 font-medium">About Us</a>
+            <a href="index.html#services" data-rd-scroll="services" class="block w-full text-left py-2 text-gray-600 font-medium">Services</a>
+            <div class="pl-4 space-y-2 border-l-2 border-blue-50 ml-2 my-1">
+              <a href="index.html#services" data-rd-scroll="services" class="block w-full text-left py-1 text-sm text-gray-500 hover:text-blue-600 font-medium">NIF</a>
+              <a href="index.html#services" data-rd-scroll="services" class="block w-full text-left py-1 text-sm text-gray-500 hover:text-blue-600 font-medium">NIF &amp; Tax Representative</a>
+              <button type="button" data-rd-nav-subtoggle aria-expanded="false" class="w-full text-left py-1 text-sm text-gray-500 hover:text-blue-600 font-medium flex items-center justify-between">
+                Other Legal Services
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+              <div data-rd-nav-sub class="pl-4 space-y-2 mt-1 border-l border-gray-100 ml-2">
+                <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services" class="block w-full text-left py-1 text-xs text-gray-500 hover:text-blue-600 font-medium">AIMA Documents Review</a>
+                <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services" class="block w-full text-left py-1 text-xs text-gray-500 hover:text-blue-600 font-medium">NIF Address Update</a>
+                <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services" class="block w-full text-left py-1 text-xs text-gray-500 hover:text-blue-600 font-medium">Legal Letters</a>
+                <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services" class="block w-full text-left py-1 text-xs text-gray-500 hover:text-blue-600 font-medium">Rental Contract Review</a>
               </div>
             </div>
+            <a href="index.html#how-it-works" data-rd-scroll="how-it-works" class="block w-full text-left py-2 text-gray-600 font-medium">How it works</a>
+            <a href="articles.html" class="block w-full text-left py-2 text-gray-600 font-medium">Articles</a>
+            <a href="faq.html" class="block w-full text-left py-2 text-gray-600 font-medium">FAQ</a>
+            <a href="contacts.html" class="block w-full text-left py-2 text-gray-600 font-medium">Contact</a>
+            <a href="form.html" class="block w-full mt-4"><span class="inline-flex items-center justify-center whitespace-nowrap text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium w-full">Request Service</span></a>
           </div>
         </div>
-      </section>
-
-      <section class="rd-section" style="background:var(--blue-50);">
-        <div class="rd-container" style="max-width:52rem;">
-          <h2 class="rd-h2 rd-center" style="margin-bottom:2rem;">Our <span class="rd-accent">Mission</span></h2>
-          <div class="rd-quote">
-            <p>We understand how challenging it can be to navigate administrative processes in a new country, that's why we're here to make this step simple and hassle-free.</p>
-            <p>We speed up the process of obtaining your NIF, so you can focus on what really matters: studying and enjoying the amazing experience of living in Portugal, without the stress of bureaucracy.</p>
-            <p>Our work goes beyond simply providing an NIF. We want everyone to feel supported from the moment they arrive until the last day, ensuring a successful and smooth adaptation to life in Portugal.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="rd-section">
-        <div class="rd-container">
-          <div class="rd-center" style="max-width:40rem;margin-left:auto;margin-right:auto;margin-bottom:3rem;">
-            <h2 class="rd-h2" style="margin-bottom:0.75rem;">Meet the <span class="rd-accent">Founders</span></h2>
-            <p class="rd-lede">The legal minds behind NIF4Erasmus, dedicated to simplifying your journey to Portugal.</p>
-          </div>
-          <div class="rd-founders" style="max-width:40rem;margin:0 auto;">
-            <div>
-              <img src="assets/images/founder-beatriz.jpg" alt="Beatriz Lopes" loading="lazy" />
-              <h3>Beatriz Lopes</h3>
-              <span>Co-Founder &amp; Lawyer</span>
-            </div>
-            <div>
-              <img src="assets/images/founder-rui.jpg" alt="Rui Antunes Tavares" loading="lazy" />
-              <h3>Rui Antunes Tavares</h3>
-              <span>Co-Founder &amp; Lawyer</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="rd-cta">
-        <div class="rd-container rd-center">
-          <h2 class="rd-h2" style="color:var(--white);margin-bottom:0.75rem;">Ready to start your journey in Portugal?</h2>
-          <p style="color:var(--blue-100);font-size:1.1rem;margin-bottom:2rem;">Get your NIF sorted today so you can focus on the fun part.</p>
-          <a href="form.html" class="rd-btn rd-btn--on-blue">Order Your NIF Now <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></a>
-        </div>
-      </section>
-
+</nav>
+    <main id="main" class="flex-grow">
+<div class="min-h-screen bg-white"><section class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-slate-50"><div class="max-w-4xl mx-auto text-center"><h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight mb-6">About <span class="text-blue-600">NIF4Erasmus</span></h1><p class="text-xl text-gray-600 leading-relaxed mb-8 max-w-3xl mx-auto">We are a team of young lawyers dedicated to helping international students easily obtain their NIF, so you can focus on enjoying your experience in Portugal.</p></div></section><section class="py-24 px-4 sm:px-6 lg:px-8 bg-white border-t border-gray-100"><div class="max-w-7xl mx-auto"><div class="grid lg:grid-cols-2 gap-16 items-center"><div class="order-2 lg:order-1 relative rounded-3xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:h-full shadow-xl"><img alt="Erasmus students studying together" class="w-full h-full object-cover" src="assets/fg/Photo_1-DtWdcR2z.jpeg"/><div class="absolute inset-0 bg-blue-900/10"></div></div><div class="order-1 lg:order-2 space-y-10 lg:pl-4"><div><h2 class="text-4xl sm:text-5xl tracking-tight font-bold text-gray-900 mb-6">Why choose <span class="text-blue-600">NIF4Erasmus</span>?</h2><p class="text-lg text-gray-600 leading-relaxed">We built this service because we saw too many international students struggle with Portuguese bureaucracy. Our mission is to make your transition smooth.</p></div><div class="space-y-8"><div class="flex gap-5"><div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center shrink-0"><svg class="lucide lucide-clock w-7 h-7 text-blue-600" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div><div><h3 class="text-xl font-bold tracking-tight text-gray-900 mb-2">Lightning Fast</h3><p class="text-base text-gray-600 leading-relaxed">Get your NIF in an estimated 2–5 business days. Processing times depend on the Portuguese Tax Authority and may vary.</p></div></div><div class="flex gap-5"><div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center shrink-0"><svg class="lucide lucide-shield-check w-7 h-7 text-blue-600" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg></div><div><h3 class="text-xl font-bold tracking-tight text-gray-900 mb-2">100% Secure &amp; Legal</h3><p class="text-base text-gray-600 leading-relaxed">Our lawyers work directly with the Portuguese Tax Authority. Your data is protected and our process is fully compliant.</p></div></div><div class="flex gap-5"><div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center shrink-0"><svg class="lucide lucide-heart-handshake w-7 h-7 text-blue-600" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"></path><path d="m18 15-2-2"></path><path d="m15 18-2-2"></path></svg></div><div><h3 class="text-xl font-bold tracking-tight text-gray-900 mb-2">Student-First Support</h3><p class="text-base text-gray-600 leading-relaxed">We are the only legal service in Portugal fully dedicated to helping international students.</p></div></div></div></div></div></div></section><section class="py-24 px-4 sm:px-6 lg:px-8 bg-blue-50/50"><div class="max-w-4xl mx-auto"><div class="text-center mb-12"><h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Our <span class="text-blue-600">Mission</span></h2></div><div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-blue-100 relative"><svg class="lucide lucide-quote absolute top-6 left-6 sm:top-10 sm:left-10 w-12 h-12 text-blue-100" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg><div class="space-y-6 text-lg text-gray-700 leading-relaxed text-justify relative z-10 sm:px-10"><p>We understand how challenging it can be to navigate administrative processes in a new country, that's why we’re here to make this step simple and hassle-free.</p><p>We speed up the process of obtaining your NIF, so you can focus on what really matters: studying and enjoying the amazing experience of living in Portugal, without the stress of bureaucracy.</p><p>Our work goes beyond simply providing an NIF. We want everyone to feel supported from the moment they arrive until the last day, ensuring a successful and smooth adaptation to life in Portugal.</p></div></div></div></section><section class="py-24 px-4 sm:px-6 lg:px-8 bg-white"><div class="max-w-7xl mx-auto"><div class="text-center mb-16"><h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Meet the <span class="text-blue-600">Founders</span></h2><p class="text-lg text-gray-600 max-w-2xl mx-auto">The legal minds behind NIF4Erasmus, dedicated to simplifying your journey to Portugal.</p></div><div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto"><div class="flex flex-col items-center group"><div class="w-56 h-56 rounded-full overflow-hidden mb-6 shadow-lg border-4 border-white group-hover:border-blue-50 transition-colors duration-300"><img alt="Beatriz Lopes" class="w-full h-full object-cover" src="assets/fg/c2cc04306c3c8e8a07ec5c75ab2761edb834f337-BE0_mAVC.png"/></div><h3 class="text-2xl font-bold text-gray-900 mb-1">Beatriz Lopes</h3><p class="text-blue-600 font-medium mb-4">Co-Founder &amp; Lawyer</p></div><div class="flex flex-col items-center group"><div class="w-56 h-56 rounded-full overflow-hidden mb-6 shadow-lg border-4 border-white group-hover:border-blue-50 transition-colors duration-300"><img alt="Rui Antunes Tavares" class="w-full h-full object-cover" src="assets/fg/5d916e8b39d5e40a8a9a6a0080e9078a15f0adb4-ZJLxKvYb.png"/></div><h3 class="text-2xl font-bold text-gray-900 mb-1">Rui Antunes Tavares</h3><p class="text-blue-600 font-medium mb-4">Co-Founder &amp; Lawyer</p></div></div></div></section><section class="py-20 px-4 sm:px-6 lg:px-8 bg-blue-600 text-white text-center"><div class="max-w-3xl mx-auto"><h2 class="text-3xl sm:text-4xl font-bold mb-6">Ready to start your journey in Portugal?</h2><p class="text-xl text-blue-100 mb-10">Get your NIF sorted today so you can focus on the fun part.</p><a href="form.html"><span class="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-10 rounded-md has-[&gt;svg]:px-4 bg-white text-blue-600 hover:bg-gray-50 text-lg py-6 px-10 font-bold" data-slot="button">Order Your NIF Now <svg class="lucide lucide-arrow-right ml-2 w-5 h-5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span></a></div></section></div>
     </main>
-    <footer class="rd-footer">
-      <div class="rd-container">
-        <div class="rd-footer__grid">
-          <div>
-            <div class="rd-footer__logo">
-              <img src="assets/images/logo.png" alt="NIF4Erasmus" width="104" height="32" loading="lazy" />
-            </div>
-            <p style="font-size:0.9rem;line-height:1.6;max-width:22rem;">Helping international students get their Portuguese NIF without the stress.</p>
-          </div>
-
-          <div>
-            <h4>Services</h4>
-            <ul>
-              <li><a href="form.html">NIF (Portuguese Tax Number)</a></li>
-              <li><a href="form.html">NIF and Tax Representative</a></li>
-              <li><a href="index.html#other-legal-services" data-rd-scroll="other-legal-services">Other Legal Services</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4>Support</h4>
-            <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="contacts.html">Contact Us</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4>Contact</h4>
-            <ul style="margin-bottom:1.5rem;">
-              <li><a href="mailto:info@nif4erasmus.com">info@nif4erasmus.com</a></li>
-            </ul>
-
-            <div class="rd-footer__social">
-            <a href="https://www.instagram.com/nif4erasmus/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="rd-footer__social-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-            <a href="https://www.facebook.com/people/NIF-4-Erasmus/61571569951503/?locale=pt_PT" target="_blank" rel="noopener" aria-label="Facebook"><svg class="rd-footer__social-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-            <a href="https://www.tiktok.com/@nif4erasmus" target="_blank" rel="noopener" aria-label="TikTok"><svg class="rd-footer__social-icon" fill="currentColor" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.12-3.44-3.17-3.64-5.46-.22-2.18.73-4.4 2.46-5.71 1.48-1.12 3.42-1.57 5.25-1.19.01 1.38-.01 2.76.01 4.14-.94-.28-1.95-.3-2.88.08-1.15.48-1.89 1.6-1.84 2.84.05 1.25.96 2.31 2.18 2.61 1.41.34 2.91-.25 3.65-1.47.38-.63.53-1.36.5-2.09.04-5.32 0-10.65.02-15.98z"/></svg></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="rd-footer__bottom">
-          <div>&copy; 2025 NIF4Erasmus. All rights reserved.</div>
-          <div class="rd-footer__bottom-links">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-conditions.html">Terms of Service</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <footer class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900 text-gray-400"><div class="max-w-7xl mx-auto"><div class="grid md:grid-cols-4 gap-12 mb-12"><div><div class="mb-6"><img alt="NIF4Erasmus" class="h-8 w-auto brightness-0 invert opacity-90" src="assets/fg/logo-no-background-CCiE5oLl.png"/></div><p class="text-sm leading-relaxed font-medium">Helping international students get their Portuguese NIF without the stress.</p></div><div><h4 class="text-white font-bold mb-6">Services</h4><ul class="space-y-4 text-sm font-medium"><li><a class="hover:text-white transition-colors text-sm" href="form.html">NIF (Portuguese Tax Number)</a></li><li><a class="hover:text-white transition-colors text-sm" href="form.html">NIF and Tax Representative</a></li><li><a class="hover:text-white transition-colors text-left w-full text-sm inline-block" data-rd-scroll="other-legal-services" href="index.html#other-legal-services">Other Legal Services</a></li></ul></div><div><h4 class="text-white font-bold mb-6">Support</h4><ul class="space-y-4 text-sm font-medium"><li><a class="hover:text-white transition-colors" href="about.html">About Us</a></li><li><a class="hover:text-white transition-colors" href="faq.html">FAQ</a></li><li><a class="hover:text-white transition-colors" href="contacts.html">Contact Us</a></li></ul></div><div><h4 class="text-white font-bold mb-6">Contact</h4><ul class="space-y-4 text-sm font-medium"><li>info@nif4erasmus.com</li></ul><div class="mt-6 flex gap-4"><a aria-label="Instagram" class="text-gray-400 hover:text-white transition-colors" href="https://www.instagram.com/nif4erasmus/" rel="noopener noreferrer" target="_blank"><svg class="lucide lucide-instagram w-5 h-5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a><a aria-label="Facebook" class="text-gray-400 hover:text-white transition-colors" href="https://www.facebook.com/people/NIF-4-Erasmus/61571569951503/?locale=pt_PT" rel="noopener noreferrer" target="_blank"><svg class="lucide lucide-facebook w-5 h-5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a><a aria-label="TikTok" class="text-gray-400 hover:text-white transition-colors" href="https://www.tiktok.com/@nif4erasmus" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.12-3.44-3.17-3.64-5.46-.22-2.18.73-4.4 2.46-5.71 1.48-1.12 3.42-1.57 5.25-1.19.01 1.38-.01 2.76.01 4.14-.94-.28-1.95-.3-2.88.08-1.15.48-1.89 1.6-1.84 2.84.05 1.25.96 2.31 2.18 2.61 1.41.34 2.91-.25 3.65-1.47.38-.63.53-1.36.5-2.09.04-5.32 0-10.65.02-15.98z"></path></svg></a></div></div></div><div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-medium"><div>© 2025 NIF4Erasmus. All rights reserved.</div><div class="flex gap-8"><a class="hover:text-white transition-colors" href="privacy-policy.html">Privacy Policy</a><a class="hover:text-white transition-colors" href="terms-conditions.html">Terms of Service</a></div></div></div></footer>
 
     <script src="scripts/main.js" defer></script>
     <script src="assets/js/redesign.js" defer></script>
+  </div>
   </body>
 </html>
