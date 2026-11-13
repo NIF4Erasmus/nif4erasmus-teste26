@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NIF4Erasmus - Request Your NIF</title>
+    <meta name="description" content="Request your Portuguese NIF or NIF + Tax Representative service. Fill out the form in a few simple steps." />
+    <link rel="canonical" href="https://nif4erasmus.com/form.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NIF4Erasmus" />
+    <meta property="og:title" content="NIF4Erasmus - Request Your NIF" />
+    <meta property="og:description" content="Request your Portuguese NIF or NIF + Tax Representative service. Fill out the form in a few simple steps." />
+    <meta property="og:url" content="https://nif4erasmus.com/form.html" />
+    <meta property="og:image" content="https://nif4erasmus.com/assets/images/partners-hero.jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NIF4Erasmus - Request Your NIF" />
+    <meta name="twitter:description" content="Request your Portuguese NIF or NIF + Tax Representative service. Fill out the form in a few simple steps." />
+    <meta name="twitter:image" content="https://nif4erasmus.com/assets/images/partners-hero.jpeg" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png" />
+    <link rel="manifest" href="assets/favicon_io/site.webmanifest" />
+
+    <link rel="stylesheet" href="assets/css/redesign.css" />
+    <link rel="stylesheet" href="assets/css/redesign-pages.css" />
+
+    <!-- EmailJS (contact form + footer callback widget) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Firebase SDK (document uploads — order form only, loaded here for the shared script file) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-storage-compat.js"></script>
+    <!-- Tel input (footer callback widget) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <!-- Stripe buy-button (kept from the previous form page) -->
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+      // Pre-select the service from ?service=nif | nif_tax_rep (links on the homepage). Default: NIF.
+      document.addEventListener("DOMContentLoaded", function () {
+        var q = new URLSearchParams(location.search).get("service");
+        var id = (q === "nif_tax_rep" || q === "nifAndTax") ? "nifAndTax" : "nifOnly";
+        var r = document.getElementById(id);
+        if (r) r.checked = true;
+      });
+    </script>
+
+  </head>
+  <body class="rd">
+    <a class="rd-skip-link" href="#main">Skip to content</a>
+    <nav class="rd-nav">
+      <div class="rd-nav__bar">
+        <a href="index.html" class="rd-nav__logo" aria-label="NIF4Erasmus home">
+          <img src="assets/images/logo.png" alt="NIF4Erasmus" width="104" height="32" />
+        </a>
+
+        <div class="rd-nav__links">
+          <a href="about.html" class="rd-nav__link">About Us</a>
+              <div class="rd-nav__dropdown">
+                <button class="rd-nav__link" type="button">Services</button>
+                <div class="rd-nav__menu">
+                  <a href="index.html#services" data-rd-scroll="services">NIF</a>
+                  <a href="index.html#services" data-rd-scroll="services">NIF &amp; Tax Representative</a>
+                  <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services">Other Legal Services</a>
+                </div>
+              </div>
+          <a href="index.html#how-it-works" data-rd-scroll="how-it-works" class="rd-nav__link">How it works</a>
+          <a href="articles.html" class="rd-nav__link">Articles</a>
+          <a href="faq.html" class="rd-nav__link">FAQ</a>
+          <a href="contacts.html" class="rd-nav__link">Contact</a>
+          <a href="form.html" class="rd-btn rd-btn--primary rd-btn--sm">Request Service</a>
+        </div>
+
+        <button class="rd-nav__toggle" type="button" data-rd-nav-toggle aria-expanded="false" aria-controls="rd-mobile-nav" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="rd-nav__mobile" id="rd-mobile-nav" data-rd-nav-mobile>
+        <a href="about.html">About Us</a>
+        <a href="index.html#services" data-rd-scroll="services">NIF</a>
+        <a href="index.html#services" data-rd-scroll="services">NIF &amp; Tax Representative</a>
+        <button type="button" data-rd-nav-subtoggle aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+          Other Legal Services <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="rd-nav__mobile-sub" data-rd-nav-sub>
+                    <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services">AIMA Documents Review</a>
+                    <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services">NIF Address Update</a>
+                    <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services">Legal Letters</a>
+                    <a href="index.html#other-legal-services" data-rd-scroll="other-legal-services">Rental Contract Review</a>
+        </div>
+        <a href="index.html#how-it-works" data-rd-scroll="how-it-works">How it works</a>
+        <a href="articles.html">Articles</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contacts.html">Contact</a>
+        <a href="form.html" class="rd-btn rd-btn--primary rd-btn--block" style="margin-top:0.75rem;">Request Service</a>
+      </div>
+    </nav>
+    <main id="main">
+    <div class="rd-order-wrap">
+      <div class="rd-container">
+        <div class="rd-order-head">
+          <h1>Request your <span style="color:var(--blue-600);">NIF</span> now</h1>
+          <p>Please fill out all required fields marked with an asterisk (*). Ensure all documents are clear and legible.</p>
+        </div>
+        <div class="rd-order-card">
+          <form id="personalInfoForm" class="custom-form" novalidate>
+            <div class="form-progress">
+              <div class="progress-step active current" data-step="1">
+                <div class="step-number">1</div>
+                <div class="step-name">Service</div>
+              </div>
+              <div class="progress-step" data-step="2">
+                <div class="step-number">2</div>
+                <div class="step-name">Personal Details</div>
+              </div>
+              <div class="progress-step" data-step="3">
+                <div class="step-number">3</div>
+                <div class="step-name">Address</div>
+              </div>
+              <div class="progress-step" data-step="4">
+                <div class="step-number">4</div>
+                <div class="step-name">Contact</div>
+              </div>
+              <div class="progress-step" data-step="5">
+                <div class="step-number">5</div>
+                <div class="step-name">Who told you about us?</div>
+              </div>
+              <div class="progress-step" data-step="6">
+                <div class="step-number">6</div>
+                <div class="step-name">Review</div>
+              </div>
+            </div>
+            <div class="form-sections">
+          <div class="form-section active" data-step="1">
+            <h3><span style="color:var(--blue-600);">Service</span> selection</h3>
+            <div class="radio-group">
+              <label class="radio-option" for="nifOnly">
+                <input type="radio" id="nifOnly" name="service" value="nifOnly" required />
+                <div class="radio-group-label">
+                  <div class="rd-svc__title">NIF: 64 €</div>
+                  <div class="rd-svc__fee">* One-time fee for our support services</div>
+                  <div class="rd-svc__desc">For EU and EEA citizens (Norway, Iceland, and Liechtenstein), citizens of Andorra and Switzerland.<br />And Non-EU/EEA Citizens with a valid residence permit in any EU country.</div>
+                </div>
+              </label>
+              <label class="radio-option" for="nifAndTax">
+                <input type="radio" id="nifAndTax" name="service" value="nifAndTax" required />
+                <div class="radio-group-label">
+                  <div class="rd-svc__title">NIF and TAX REPRESENTATIVE: 105 €</div>
+                  <div class="rd-svc__fee">* One-time fee for our support services and one year of tax representation</div>
+                  <div class="rd-svc__desc">For Non-EU/EEA Citizens without an EU residence permit</div>
+                </div>
+              </label>
+            </div>
+            <div class="checkbox-group" id="consent-group" style="margin-top:2rem;">
+              <div class="checkbox-option">
+                <input type="checkbox" id="acceptIdentity" name="acceptIdentity" required />
+                <label for="acceptIdentity">I understand and accept that mandatory identity verification is required after submitting this form.</label>
+              </div>
+              <div class="checkbox-option">
+                <input type="checkbox" id="acceptDisclaimer" name="acceptDisclaimer" required />
+                <label for="acceptDisclaimer">I understand that NIF4Erasmus is a private service provider and that its lawyers will handle the process and represent me before the Portuguese Tax Authority, which is the only entity that issues NIFs.</label>
+              </div>
+              <div class="checkbox-option">
+                <input type="checkbox" id="acceptTerms" name="acceptTerms" required />
+                <label for="acceptTerms">I have read and accept the <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy and Data Protection Policy</a> and the <a href="terms-conditions.html" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>.</label>
+              </div>
+            </div>
+            <div class="form-navigation">
+              <button type="button" class="next-btn">Next</button>
+            </div>
+          </div>
+          <div class="form-section" data-step="2">
+            <h3><span style="color:var(--blue-600);">Personal</span> details</h3>
+            <div class="form-row">
+<div class="form-group rd-span-2"><label for="fullName">Full Name *</label><p class="rd-order-help">Please enter your full name exactly as it appears on your identification document/passport.</p><input type="text" id="fullName" name="fullName" placeholder="First name, middle name(s), last name" required /></div>
+<div class="form-group"><label for="sex">Sex *</label><p class="rd-order-help">According to your identification document.</p><select id="sex" name="sex" required><option value="" disabled hidden selected>Select a sex</option><option value="Male">Male</option><option value="Female">Female</option></select></div>
+<div class="form-group"><label for="dateOfBirth">Date of Birth *</label><p class="rd-order-help">As it appears on your identification document.</p><input type="date" id="dateOfBirth" name="dateOfBirth" placeholder="" required /></div>
+<div class="form-group"><label for="nationality">Nationality *</label><select id="nationality" name="nationality" required><option value="" disabled hidden selected>Select a nationality</option><option value="Afghanistan">Afghanistan</option><option value="Albania">Albania</option><option value="Algeria">Algeria</option><option value="Andorra">Andorra</option><option value="Angola">Angola</option><option value="Antigua and Barbuda">Antigua and Barbuda</option><option value="Argentina">Argentina</option><option value="Armenia">Armenia</option><option value="Australia">Australia</option><option value="Austria">Austria</option><option value="Azerbaijan">Azerbaijan</option><option value="Bahamas">Bahamas</option><option value="Bahrain">Bahrain</option><option value="Bangladesh">Bangladesh</option><option value="Barbados">Barbados</option><option value="Belarus">Belarus</option><option value="Belgium">Belgium</option><option value="Belize">Belize</option><option value="Benin">Benin</option><option value="Bhutan">Bhutan</option><option value="Bolivia">Bolivia</option><option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option><option value="Botswana">Botswana</option><option value="Brazil">Brazil</option><option value="Brunei">Brunei</option><option value="Bulgaria">Bulgaria</option><option value="Burkina Faso">Burkina Faso</option><option value="Burundi">Burundi</option><option value="Cabo Verde">Cabo Verde</option><option value="Cambodia">Cambodia</option><option value="Cameroon">Cameroon</option><option value="Canada">Canada</option><option value="Central African Republic">Central African Republic</option><option value="Chad">Chad</option><option value="Chile">Chile</option><option value="China">China</option><option value="Colombia">Colombia</option><option value="Comoros">Comoros</option><option value="Congo">Congo</option><option value="Costa Rica">Costa Rica</option><option value="Croatia">Croatia</option><option value="Cuba">Cuba</option><option value="Cyprus">Cyprus</option><option value="Czech Republic">Czech Republic</option><option value="Denmark">Denmark</option><option value="Djibouti">Djibouti</option><option value="Dominica">Dominica</option><option value="Dominican Republic">Dominican Republic</option><option value="Ecuador">Ecuador</option><option value="Egypt">Egypt</option><option value="El Salvador">El Salvador</option><option value="Equatorial Guinea">Equatorial Guinea</option><option value="Eritrea">Eritrea</option><option value="Estonia">Estonia</option><option value="Eswatini">Eswatini</option><option value="Ethiopia">Ethiopia</option><option value="Fiji">Fiji</option><option value="Finland">Finland</option><option value="France">France</option><option value="Gabon">Gabon</option><option value="Gambia">Gambia</option><option value="Georgia">Georgia</option><option value="Germany">Germany</option><option value="Ghana">Ghana</option><option value="Greece">Greece</option><option value="Grenada">Grenada</option><option value="Guatemala">Guatemala</option><option value="Guinea">Guinea</option><option value="Guinea-Bissau">Guinea-Bissau</option><option value="Guyana">Guyana</option><option value="Haiti">Haiti</option><option value="Honduras">Honduras</option><option value="Hungary">Hungary</option><option value="Iceland">Iceland</option><option value="India">India</option><option value="Indonesia">Indonesia</option><option value="Iran">Iran</option><option value="Iraq">Iraq</option><option value="Ireland">Ireland</option><option value="Israel">Israel</option><option value="Italy">Italy</option><option value="Jamaica">Jamaica</option><option value="Japan">Japan</option><option value="Jordan">Jordan</option><option value="Kazakhstan">Kazakhstan</option><option value="Kenya">Kenya</option><option value="Kiribati">Kiribati</option><option value="South Korea">South Korea</option><option value="Kuwait">Kuwait</option><option value="Kyrgyzstan">Kyrgyzstan</option><option value="Laos">Laos</option><option value="Latvia">Latvia</option><option value="Lebanon">Lebanon</option><option value="Lesotho">Lesotho</option><option value="Liberia">Liberia</option><option value="Libya">Libya</option><option value="Liechtenstein">Liechtenstein</option><option value="Lithuania">Lithuania</option><option value="Luxembourg">Luxembourg</option><option value="Madagascar">Madagascar</option><option value="Malawi">Malawi</option><option value="Malaysia">Malaysia</option><option value="Maldives">Maldives</option><option value="Mali">Mali</option><option value="Malta">Malta</option><option value="Marshall Islands">Marshall Islands</option><option value="Mauritania">Mauritania</option><option value="Mauritius">Mauritius</option><option value="Mexico">Mexico</option><option value="Micronesia">Micronesia</option><option value="Moldova">Moldova</option><option value="Monaco">Monaco</option><option value="Mongolia">Mongolia</option><option value="Montenegro">Montenegro</option><option value="Morocco">Morocco</option><option value="Mozambique">Mozambique</option><option value="Myanmar">Myanmar</option><option value="Namibia">Namibia</option><option value="Nauru">Nauru</option><option value="Nepal">Nepal</option><option value="Netherlands">Netherlands</option><option value="New Zealand">New Zealand</option><option value="Nicaragua">Nicaragua</option><option value="Niger">Niger</option><option value="Nigeria">Nigeria</option><option value="North Macedonia">North Macedonia</option><option value="Norway">Norway</option><option value="Oman">Oman</option><option value="Pakistan">Pakistan</option><option value="Palau">Palau</option><option value="Panama">Panama</option><option value="Papua New Guinea">Papua New Guinea</option><option value="Paraguay">Paraguay</option><option value="Peru">Peru</option><option value="Philippines">Philippines</option><option value="Poland">Poland</option><option value="Portugal">Portugal</option><option value="Qatar">Qatar</option><option value="Romania">Romania</option><option value="Russia">Russia</option><option value="Rwanda">Rwanda</option><option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option><option value="Saint Lucia">Saint Lucia</option><option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option><option value="Samoa">Samoa</option><option value="San Marino">San Marino</option><option value="Sao Tome and Principe">Sao Tome and Principe</option><option value="Saudi Arabia">Saudi Arabia</option><option value="Senegal">Senegal</option><option value="Serbia">Serbia</option><option value="Seychelles">Seychelles</option><option value="Sierra Leone">Sierra Leone</option><option value="Singapore">Singapore</option><option value="Slovakia">Slovakia</option><option value="Slovenia">Slovenia</option><option value="Solomon Islands">Solomon Islands</option><option value="Somalia">Somalia</option><option value="South Africa">South Africa</option><option value="Spain">Spain</option><option value="Sri Lanka">Sri Lanka</option><option value="Sudan">Sudan</option><option value="Suriname">Suriname</option><option value="Sweden">Sweden</option><option value="Switzerland">Switzerland</option><option value="Syria">Syria</option><option value="Taiwan">Taiwan</option><option value="Tajikistan">Tajikistan</option><option value="Tanzania">Tanzania</option><option value="Thailand">Thailand</option><option value="Togo">Togo</option><option value="Tonga">Tonga</option><option value="Trinidad and Tobago">Trinidad and Tobago</option><option value="Tunisia">Tunisia</option><option value="Turkey">Turkey</option><option value="Turkmenistan">Turkmenistan</option><option value="Tuvalu">Tuvalu</option><option value="Uganda">Uganda</option><option value="Ukraine">Ukraine</option><option value="United Arab Emirates">United Arab Emirates</option><option value="United Kingdom">United Kingdom</option><option value="United States of America">United States of America</option><option value="Uruguay">Uruguay</option><option value="Uzbekistan">Uzbekistan</option><option value="Vanuatu">Vanuatu</option><option value="Vatican City">Vatican City</option><option value="Venezuela">Venezuela</option><option value="Vietnam">Vietnam</option><option value="Yemen">Yemen</option><option value="Zambia">Zambia</option><option value="Zimbabwe">Zimbabwe</option></select></div>
+<div class="form-group"><label for="placeOfBirth">Place of Birth *</label><p class="rd-order-help">As stated on your ID card or passport. If neither document mentions it, use your birth certificate.</p><input type="text" id="placeOfBirth" name="placeOfBirth" placeholder="e.g. Paris, France" required /></div>
+<div class="form-group rd-span-2"><label for="documentType">Identification Document *</label><p class="rd-order-help">EU citizens can use a National ID Card or Passport. All other citizens (including EEA and Non-EU) must use a Passport.<span class="rd-order-important">Important: You must keep this physical document with you for the identity verification step.</span></p><select id="documentType" name="documentType" required><option value="" disabled hidden selected>Select an identification document</option><option value="national_id">National ID Card</option><option value="passport">Passport</option></select></div>
+<div class="form-group"><label for="documentNumber">Document Number *</label><p class="rd-order-help">This information is required for us to draft the Power of Attorney you will need to sign, granting us the authority to request the NIF on your behalf in the Portuguese Tax Authorities.</p><input type="text" id="documentNumber" name="documentNumber" placeholder="" required /></div>
+<div class="form-group"><label for="documentExpiry">Document Expiry Date *</label><input type="date" id="documentExpiry" name="documentExpiry" placeholder="" required /></div>
+<div class="form-group rd-span-2"><label for="issuingAuthority">Issuing Authority *</label><p class="rd-order-help">The country/authority that issued your selected identification document (National ID Card or Passport).</p><select id="issuingAuthority" name="issuingAuthority" required><option value="" disabled hidden selected>Select an issuing authority</option><option value="Afghanistan">Afghanistan</option><option value="Albania">Albania</option><option value="Algeria">Algeria</option><option value="Andorra">Andorra</option><option value="Angola">Angola</option><option value="Antigua and Barbuda">Antigua and Barbuda</option><option value="Argentina">Argentina</option><option value="Armenia">Armenia</option><option value="Austria">Austria</option><option value="Azerbaijan">Azerbaijan</option><option value="Bahamas">Bahamas</option><option value="Bahrain">Bahrain</option><option value="Bangladesh">Bangladesh</option><option value="Barbados">Barbados</option><option value="Belarus">Belarus</option><option value="Belize">Belize</option><option value="Benin">Benin</option><option value="Bhutan">Bhutan</option><option value="Bolivia">Bolivia</option><option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option><option value="Botswana">Botswana</option><option value="Brunei">Brunei</option><option value="Bulgaria">Bulgaria</option><option value="Burkina Faso">Burkina Faso</option><option value="Burundi">Burundi</option><option value="Cabo Verde">Cabo Verde</option><option value="Cambodia">Cambodia</option><option value="Cameroon">Cameroon</option><option value="Canada">Canada</option><option value="Central African Republic">Central African Republic</option><option value="Chad">Chad</option><option value="Chile">Chile</option><option value="Colombia">Colombia</option><option value="Commonwealth of Australia">Commonwealth of Australia</option><option value="Comoros">Comoros</option><option value="Congo">Congo</option><option value="Costa Rica">Costa Rica</option><option value="Croatia">Croatia</option><option value="Cuba">Cuba</option><option value="Cyprus">Cyprus</option><option value="Czech Republic">Czech Republic</option><option value="Denmark">Denmark</option><option value="Djibouti">Djibouti</option><option value="Dominica">Dominica</option><option value="Dominican Republic">Dominican Republic</option><option value="Ecuador">Ecuador</option><option value="Egypt">Egypt</option><option value="El Salvador">El Salvador</option><option value="Equatorial Guinea">Equatorial Guinea</option><option value="Eritrea">Eritrea</option><option value="Estonia">Estonia</option><option value="Eswatini">Eswatini</option><option value="Ethiopia">Ethiopia</option><option value="Federal Republic of Germany">Federal Republic of Germany</option><option value="Federative Republic of Brazil">Federative Republic of Brazil</option><option value="Fiji">Fiji</option><option value="Finland">Finland</option><option value="French Republic">French Republic</option><option value="Gabon">Gabon</option><option value="Gambia">Gambia</option><option value="Georgia">Georgia</option><option value="Ghana">Ghana</option><option value="Greece">Greece</option><option value="Grenada">Grenada</option><option value="Guatemala">Guatemala</option><option value="Guinea">Guinea</option><option value="Guinea-Bissau">Guinea-Bissau</option><option value="Guyana">Guyana</option><option value="Haiti">Haiti</option><option value="Honduras">Honduras</option><option value="Hungary">Hungary</option><option value="Iceland">Iceland</option><option value="Indonesia">Indonesia</option><option value="Iran">Iran</option><option value="Iraq">Iraq</option><option value="Ireland">Ireland</option><option value="Israel">Israel</option><option value="Italian Republic">Italian Republic</option><option value="Jamaica">Jamaica</option><option value="Japan">Japan</option><option value="Jordan">Jordan</option><option value="Kazakhstan">Kazakhstan</option><option value="Kenya">Kenya</option><option value="Kingdom of Belgium">Kingdom of Belgium</option><option value="Kingdom of Spain">Kingdom of Spain</option><option value="Kingdom of the Netherlands">Kingdom of the Netherlands</option><option value="Kiribati">Kiribati</option><option value="Kuwait">Kuwait</option><option value="Kyrgyzstan">Kyrgyzstan</option><option value="Laos">Laos</option><option value="Latvia">Latvia</option><option value="Lebanon">Lebanon</option><option value="Lesotho">Lesotho</option><option value="Liberia">Liberia</option><option value="Libya">Libya</option><option value="Liechtenstein">Liechtenstein</option><option value="Lithuania">Lithuania</option><option value="Luxembourg">Luxembourg</option><option value="Madagascar">Madagascar</option><option value="Malawi">Malawi</option><option value="Malaysia">Malaysia</option><option value="Maldives">Maldives</option><option value="Mali">Mali</option><option value="Malta">Malta</option><option value="Marshall Islands">Marshall Islands</option><option value="Mauritania">Mauritania</option><option value="Mauritius">Mauritius</option><option value="Micronesia">Micronesia</option><option value="Moldova">Moldova</option><option value="Monaco">Monaco</option><option value="Mongolia">Mongolia</option><option value="Montenegro">Montenegro</option><option value="Morocco">Morocco</option><option value="Mozambique">Mozambique</option><option value="Myanmar">Myanmar</option><option value="Namibia">Namibia</option><option value="Nauru">Nauru</option><option value="Nepal">Nepal</option><option value="New Zealand">New Zealand</option><option value="Nicaragua">Nicaragua</option><option value="Niger">Niger</option><option value="Nigeria">Nigeria</option><option value="North Macedonia">North Macedonia</option><option value="Norway">Norway</option><option value="Oman">Oman</option><option value="Pakistan">Pakistan</option><option value="Palau">Palau</option><option value="Panama">Panama</option><option value="Papua New Guinea">Papua New Guinea</option><option value="Paraguay">Paraguay</option><option value="People's Republic of China">People's Republic of China</option><option value="Peru">Peru</option><option value="Philippines">Philippines</option><option value="Poland">Poland</option><option value="Portuguese Republic">Portuguese Republic</option><option value="Qatar">Qatar</option><option value="Republic of India">Republic of India</option><option value="Romania">Romania</option><option value="Russia">Russia</option><option value="Rwanda">Rwanda</option><option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option><option value="Saint Lucia">Saint Lucia</option><option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option><option value="Samoa">Samoa</option><option value="San Marino">San Marino</option><option value="Sao Tome and Principe">Sao Tome and Principe</option><option value="Saudi Arabia">Saudi Arabia</option><option value="Senegal">Senegal</option><option value="Serbia">Serbia</option><option value="Seychelles">Seychelles</option><option value="Sierra Leone">Sierra Leone</option><option value="Singapore">Singapore</option><option value="Slovakia">Slovakia</option><option value="Slovenia">Slovenia</option><option value="Solomon Islands">Solomon Islands</option><option value="Somalia">Somalia</option><option value="South Africa">South Africa</option><option value="South Korea">South Korea</option><option value="Sri Lanka">Sri Lanka</option><option value="Sudan">Sudan</option><option value="Suriname">Suriname</option><option value="Sweden">Sweden</option><option value="Swiss Confederation">Swiss Confederation</option><option value="Syria">Syria</option><option value="Taiwan">Taiwan</option><option value="Tajikistan">Tajikistan</option><option value="Tanzania">Tanzania</option><option value="Thailand">Thailand</option><option value="Togo">Togo</option><option value="Tonga">Tonga</option><option value="Trinidad and Tobago">Trinidad and Tobago</option><option value="Tunisia">Tunisia</option><option value="Turkey">Turkey</option><option value="Turkmenistan">Turkmenistan</option><option value="Tuvalu">Tuvalu</option><option value="Uganda">Uganda</option><option value="Ukraine">Ukraine</option><option value="United Arab Emirates">United Arab Emirates</option><option value="United Kingdom of Great Britain and Northern Ireland">United Kingdom of Great Britain and Northern Ireland</option><option value="United Mexican States">United Mexican States</option><option value="United States of America">United States of America</option><option value="Uruguay">Uruguay</option><option value="Uzbekistan">Uzbekistan</option><option value="Vanuatu">Vanuatu</option><option value="Vatican City">Vatican City</option><option value="Venezuela">Venezuela</option><option value="Vietnam">Vietnam</option><option value="Yemen">Yemen</option><option value="Zambia">Zambia</option><option value="Zimbabwe">Zimbabwe</option></select></div>
+            </div>
+
+            <div class="form-group" style="margin-top:2rem;">
+              <label for="idCard">Upload your valid identification document/passport *</label>
+              <div class="rd-order-note rd-order-note--blue"><span><p>Please upload a properly scanned document (PDF only). Ensure the document is clean, legible, and without watermarks, shadows, fingers, or other objects. Photos or screenshots are NOT accepted.</p><p><strong>⚠️ Important: Ensure you have the original physical document with you, as you will need it to complete the mandatory identity verification right after checkout.</strong></p></span></div>
+              <div class="rd-order-list">
+                <ul>
+                  <li><strong>National ID Card:</strong> include both <strong>front</strong> and <strong>back</strong> <em>or</em></li>
+                  <li><strong>Passport:</strong> include <strong>top</strong> and <strong>bottom page</strong>, and the <strong>signature page</strong></li>
+                </ul>
+              </div>
+              <p class="rd-order-tip">Tip: If you don't have a scanner, you can use a free mobile document scanning app (e.g., CamScanner) to create your PDF.</p>
+              <label class="rd-order-file" for="idCard">
+                <input type="file" id="idCard" name="idCard" accept=".pdf,application/pdf" data-label="ID document" required />
+                <span class="rd-order-file__btn">Choose File</span>
+                <span class="rd-order-file__name" data-rd-filename="idCard">No file chosen</span>
+              </label>
+              <small class="file-help">Accepted format: PDF (Max 5MB)<br />Your personal information will be kept confidential.</small>
+            </div>
+
+            <div class="form-group rd-order-divider">
+              <label>Are you an EU/EEA citizen? *</label>
+              <div class="rd-order-inline">
+                <label class="rd-order-yn"><input type="radio" id="euYes" name="isEuCitizen" value="yes" required /> <span>Yes</span></label>
+                <label class="rd-order-yn"><input type="radio" id="euNo" name="isEuCitizen" value="no" required /> <span>No</span></label>
+              </div>
+              <div id="visaBlock" hidden style="margin-top:1.25rem;">
+                <label for="visaFile">Upload your Visa or EU Residence Permit *</label>
+                <div class="rd-order-note rd-order-note--blue">Please upload your Portuguese Visa or EU Residence Permit. Ensure it is a clean, legible PDF without watermarks, shadows, or reflections.</div>
+                <label class="rd-order-file" for="visaFile">
+                <input type="file" id="visaFile" name="visaFile" accept=".pdf,application/pdf" data-label="Visa / Residence Permit"  />
+                <span class="rd-order-file__btn">Choose File</span>
+                <span class="rd-order-file__name" data-rd-filename="visaFile">No file chosen</span>
+              </label>
+                <small class="file-help">Accepted format: PDF (Max 5MB)</small>
+              </div>
+            </div>
+
+            <div id="minorBlock" class="form-group rd-order-divider" hidden>
+              <h4 class="rd-order-minor-title"><span>⚠️</span> Required Documents for Minors</h4>
+              <div class="form-group">
+                <label for="birthCertificate">Birth Certificate *</label>
+                <p class="rd-order-help">Please upload a scanned copy of the minor's birth certificate.</p>
+                <label class="rd-order-file" for="birthCertificate">
+                <input type="file" id="birthCertificate" name="birthCertificate" accept=".pdf,application/pdf" data-label="Birth Certificate"  />
+                <span class="rd-order-file__btn">Choose File</span>
+                <span class="rd-order-file__name" data-rd-filename="birthCertificate">No file chosen</span>
+              </label>
+              </div>
+              <div class="form-group">
+                <label for="parentPassport">Parent's Valid National Identification Document or Passport *</label>
+                <p class="rd-order-help">Please upload a scanned copy of the parent(s)' valid National ID card or Passport. If you are providing documents for both parents, please combine them into a single PDF file.</p>
+                <label class="rd-order-file" for="parentPassport">
+                <input type="file" id="parentPassport" name="parentPassport" accept=".pdf,application/pdf" data-label="Parent's ID / Passport"  />
+                <span class="rd-order-file__btn">Choose File</span>
+                <span class="rd-order-file__name" data-rd-filename="parentPassport">No file chosen</span>
+              </label>
+              </div>
+            </div>
+
+            <div class="form-navigation">
+              <button type="button" class="prev-btn">Previous</button>
+              <button type="button" class="next-btn">Next</button>
+            </div>
+          </div>
+          <div class="form-section" data-step="3">
+            <h3><span style="color:var(--blue-600);">Address</span> information</h3>
+            <p class="rd-order-lead">This address will be associated with your NIF, so it is mandatory to indicate your full address properly.</p>
+            <div class="rd-order-note rd-order-note--blue"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16.5"/><circle cx="12" cy="7.8" r="0.9" fill="currentColor" stroke="none"/></svg><span>Planning to register a <strong>Portuguese address</strong>? Please review the important guidelines below in this step.</span></div>
+
+            <div class="form-row" style="margin-top:1.5rem;">
+              <div class="form-group rd-span-2"><label for="address">Full Address (from your home country) *</label><input type="text" id="address" name="address" placeholder="Street name, house number, apartment..." required /></div>
+              <div class="form-group"><label for="zipCode">Zip Code *</label><input type="text" id="zipCode" name="zipCode" placeholder="" required /></div>
+              <div class="form-group"><label for="city">City *</label><input type="text" id="city" name="city" placeholder="" required /></div>
+              <div class="form-group rd-span-2"><label for="country">Country *</label><select id="country" name="country" required><option value="" disabled hidden selected>Select a country</option><option value="Afghanistan">Afghanistan</option><option value="Albania">Albania</option><option value="Algeria">Algeria</option><option value="Andorra">Andorra</option><option value="Angola">Angola</option><option value="Antigua and Barbuda">Antigua and Barbuda</option><option value="Argentina">Argentina</option><option value="Armenia">Armenia</option><option value="Australia">Australia</option><option value="Austria">Austria</option><option value="Azerbaijan">Azerbaijan</option><option value="Bahamas">Bahamas</option><option value="Bahrain">Bahrain</option><option value="Bangladesh">Bangladesh</option><option value="Barbados">Barbados</option><option value="Belarus">Belarus</option><option value="Belgium">Belgium</option><option value="Belize">Belize</option><option value="Benin">Benin</option><option value="Bhutan">Bhutan</option><option value="Bolivia">Bolivia</option><option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option><option value="Botswana">Botswana</option><option value="Brazil">Brazil</option><option value="Brunei">Brunei</option><option value="Bulgaria">Bulgaria</option><option value="Burkina Faso">Burkina Faso</option><option value="Burundi">Burundi</option><option value="Cabo Verde">Cabo Verde</option><option value="Cambodia">Cambodia</option><option value="Cameroon">Cameroon</option><option value="Canada">Canada</option><option value="Central African Republic">Central African Republic</option><option value="Chad">Chad</option><option value="Chile">Chile</option><option value="China">China</option><option value="Colombia">Colombia</option><option value="Comoros">Comoros</option><option value="Congo">Congo</option><option value="Costa Rica">Costa Rica</option><option value="Croatia">Croatia</option><option value="Cuba">Cuba</option><option value="Cyprus">Cyprus</option><option value="Czech Republic">Czech Republic</option><option value="Denmark">Denmark</option><option value="Djibouti">Djibouti</option><option value="Dominica">Dominica</option><option value="Dominican Republic">Dominican Republic</option><option value="Ecuador">Ecuador</option><option value="Egypt">Egypt</option><option value="El Salvador">El Salvador</option><option value="Equatorial Guinea">Equatorial Guinea</option><option value="Eritrea">Eritrea</option><option value="Estonia">Estonia</option><option value="Eswatini">Eswatini</option><option value="Ethiopia">Ethiopia</option><option value="Fiji">Fiji</option><option value="Finland">Finland</option><option value="France">France</option><option value="Gabon">Gabon</option><option value="Gambia">Gambia</option><option value="Georgia">Georgia</option><option value="Germany">Germany</option><option value="Ghana">Ghana</option><option value="Greece">Greece</option><option value="Grenada">Grenada</option><option value="Guatemala">Guatemala</option><option value="Guinea">Guinea</option><option value="Guinea-Bissau">Guinea-Bissau</option><option value="Guyana">Guyana</option><option value="Haiti">Haiti</option><option value="Honduras">Honduras</option><option value="Hungary">Hungary</option><option value="Iceland">Iceland</option><option value="India">India</option><option value="Indonesia">Indonesia</option><option value="Iran">Iran</option><option value="Iraq">Iraq</option><option value="Ireland">Ireland</option><option value="Israel">Israel</option><option value="Italy">Italy</option><option value="Jamaica">Jamaica</option><option value="Japan">Japan</option><option value="Jordan">Jordan</option><option value="Kazakhstan">Kazakhstan</option><option value="Kenya">Kenya</option><option value="Kiribati">Kiribati</option><option value="South Korea">South Korea</option><option value="Kuwait">Kuwait</option><option value="Kyrgyzstan">Kyrgyzstan</option><option value="Laos">Laos</option><option value="Latvia">Latvia</option><option value="Lebanon">Lebanon</option><option value="Lesotho">Lesotho</option><option value="Liberia">Liberia</option><option value="Libya">Libya</option><option value="Liechtenstein">Liechtenstein</option><option value="Lithuania">Lithuania</option><option value="Luxembourg">Luxembourg</option><option value="Madagascar">Madagascar</option><option value="Malawi">Malawi</option><option value="Malaysia">Malaysia</option><option value="Maldives">Maldives</option><option value="Mali">Mali</option><option value="Malta">Malta</option><option value="Marshall Islands">Marshall Islands</option><option value="Mauritania">Mauritania</option><option value="Mauritius">Mauritius</option><option value="Mexico">Mexico</option><option value="Micronesia">Micronesia</option><option value="Moldova">Moldova</option><option value="Monaco">Monaco</option><option value="Mongolia">Mongolia</option><option value="Montenegro">Montenegro</option><option value="Morocco">Morocco</option><option value="Mozambique">Mozambique</option><option value="Myanmar">Myanmar</option><option value="Namibia">Namibia</option><option value="Nauru">Nauru</option><option value="Nepal">Nepal</option><option value="Netherlands">Netherlands</option><option value="New Zealand">New Zealand</option><option value="Nicaragua">Nicaragua</option><option value="Niger">Niger</option><option value="Nigeria">Nigeria</option><option value="North Macedonia">North Macedonia</option><option value="Norway">Norway</option><option value="Oman">Oman</option><option value="Pakistan">Pakistan</option><option value="Palau">Palau</option><option value="Panama">Panama</option><option value="Papua New Guinea">Papua New Guinea</option><option value="Paraguay">Paraguay</option><option value="Peru">Peru</option><option value="Philippines">Philippines</option><option value="Poland">Poland</option><option value="Portugal">Portugal</option><option value="Qatar">Qatar</option><option value="Romania">Romania</option><option value="Russia">Russia</option><option value="Rwanda">Rwanda</option><option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option><option value="Saint Lucia">Saint Lucia</option><option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option><option value="Samoa">Samoa</option><option value="San Marino">San Marino</option><option value="Sao Tome and Principe">Sao Tome and Principe</option><option value="Saudi Arabia">Saudi Arabia</option><option value="Senegal">Senegal</option><option value="Serbia">Serbia</option><option value="Seychelles">Seychelles</option><option value="Sierra Leone">Sierra Leone</option><option value="Singapore">Singapore</option><option value="Slovakia">Slovakia</option><option value="Slovenia">Slovenia</option><option value="Solomon Islands">Solomon Islands</option><option value="Somalia">Somalia</option><option value="South Africa">South Africa</option><option value="Spain">Spain</option><option value="Sri Lanka">Sri Lanka</option><option value="Sudan">Sudan</option><option value="Suriname">Suriname</option><option value="Sweden">Sweden</option><option value="Switzerland">Switzerland</option><option value="Syria">Syria</option><option value="Taiwan">Taiwan</option><option value="Tajikistan">Tajikistan</option><option value="Tanzania">Tanzania</option><option value="Thailand">Thailand</option><option value="Togo">Togo</option><option value="Tonga">Tonga</option><option value="Trinidad and Tobago">Trinidad and Tobago</option><option value="Tunisia">Tunisia</option><option value="Turkey">Turkey</option><option value="Turkmenistan">Turkmenistan</option><option value="Tuvalu">Tuvalu</option><option value="Uganda">Uganda</option><option value="Ukraine">Ukraine</option><option value="United Arab Emirates">United Arab Emirates</option><option value="United Kingdom">United Kingdom</option><option value="United States of America">United States of America</option><option value="Uruguay">Uruguay</option><option value="Uzbekistan">Uzbekistan</option><option value="Vanuatu">Vanuatu</option><option value="Vatican City">Vatican City</option><option value="Venezuela">Venezuela</option><option value="Vietnam">Vietnam</option><option value="Yemen">Yemen</option><option value="Zambia">Zambia</option><option value="Zimbabwe">Zimbabwe</option></select></div>
+            </div>
+
+            <div class="form-group" style="margin-top:2rem;">
+              <label for="proofOfAddressInput">Proof of Address (from your home country) *</label>
+              <p class="rd-order-help">Upload a scanned document (PDF only) — <strong>preferably in English</strong> for faster verification</p>
+
+              <div id="countryTipWrap" class="rd-order-note rd-order-note--green" hidden>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16.5"/><circle cx="12" cy="7.8" r="0.9" fill="currentColor" stroke="none"/></svg>
+                <div><strong id="countryTipTitle"></strong><div id="countryTips"><div data-country-tip="United Kingdom" hidden>Driving License, Council Tax bill, or a recent HMRC letter are highly recommended and always accepted.</div><div data-country-tip="Germany" hidden>Your <strong>German National ID Card (Personalausweis)</strong> (scan of both front and back) is the top choice, as it usually includes your registered residential address.</div><div data-country-tip="Spain" hidden>Your <strong>Spanish National ID Card (DNI)</strong> (scan of both front and back), which usually displays your residential address, or a <strong>Certificado de Empadronamiento</strong> are widely accepted and recommended.</div><div data-country-tip="Brazil" hidden>A utility bill (e.g., Enel, Light) or bank statement (e.g., Nubank, Itaú) clearly showing your full CEP is recommended.</div><div data-country-tip="France" hidden>Your <strong>French National ID Card</strong> or <strong>Passport</strong> (which usually include your residential address), an <strong>EDF bill</strong>, or a recent tax notice work best.</div><div data-country-tip="Greece" hidden>Clients from Greece often provide a <strong>Tax Residence Certificate</strong>, which can be issued online and usually includes the address both in Greek and in English. This certificate can be requested through the <a href="https://www.aade.gr/en/issuance-tax-residence-certificate-trc" target="_blank" rel="noopener noreferrer">official website of the Greek Tax Authority (AADE)</a>.</div><div data-country-tip="Turkey" hidden>Clients from Turkey regularly provide a <strong>"Yerleşim Yeri ve Diğer Adres Belgesi"</strong>, an official residence certificate issued by the General Directorate of Population and Citizenship Affairs (Nüfus ve Vatandaşlık İşleri Genel Müdürlüğü). It can be easily obtained online via the <a href="https://www.turkiye.gov.tr/nvi-yerlesim-yeri-ve-diger-adres-belgesi-sorgulama" target="_blank" rel="noopener noreferrer">e-Devlet portal (Yerleşim Yeri ve Diğer Adres Belgesi Sorgulama)</a>.</div><div data-country-tip="Hungary" hidden>Clients from Hungary usually provide the <strong>"Lakcímet igazoló hatósági igazolvány"</strong> (commonly known as <em>Lakcímkártya</em>), the official Hungarian address card that certifies your registered residential address.</div><div data-country-tip="India" hidden>For clients from India, the <strong>last page of the Indian Passport</strong> usually contains your registered residential address and is widely accepted as proof of address.</div><div data-country-tip="United States of America" hidden>Clients from the United States of America usually provide their <strong>US Driver's License</strong> (or State ID), as it clearly displays their residential address and is always accepted.</div><div data-country-tip="Guinea-Bissau" hidden>For clients from Guinea-Bissau, the <strong>Passport page showing your residential address</strong> is usually provided and accepted as proof of address.</div><div data-country-tip="Netherlands" hidden>Dutch clients typically provide a <strong>Uittreksel uit de Basisregistratie Personen (BRP)</strong>, a <strong>Rekeningafschrift Rabo Free</strong>, an <strong>ABN AMRO bank statement</strong>, or an official letter issued by the <strong>Dienst Uitvoering Onderwijs (DUO)</strong> as proof of address.</div><div data-country-tip="Belgium" hidden>Clients from Belgium regularly provide an <strong>"Attest van hoofdverblijfplaats"</strong> (or <em>Certificat de résidence principale</em>), the official certificate of main residence issued by your municipality.</div><div data-country-tip="Luxembourg" hidden>Clients from Luxembourg typically provide a <strong>"Certificat de résidence"</strong> (<em>Wohnsitzbescheinigung</em>), the official residence certificate issued by your commune or online via MyGuichet.lu.</div><div data-country-tip="Poland" hidden>Clients from Poland typically provide a <strong>Revolut bank statement</strong> or a <strong>"Zaświadczenie z rejestru PESEL"</strong> (official certificate from the PESEL register confirming registered residence).</div><div data-country-tip="Austria" hidden>Clients from Austria typically provide a <strong>"Bestätigung der Meldung aus dem Zentralen Melderegister"</strong> (Meldezettel / registration confirmation), or a bank statement from <strong>Bank Austria</strong>, <strong>Trade Republic</strong>, or <strong>Revolut</strong>.</div><div data-country-tip="Bulgaria" hidden>Clients from Bulgaria typically provide a <strong>Revolut bank statement</strong> with their residential address written in the Roman/Latin alphabet.</div><div data-country-tip="Italy" hidden>Your <strong>Italian National ID Card (Carta d'Identit&agrave;)</strong> (scan of both front and back) is the top choice, as it usually includes your residential address.</div><div data-country-tip="Croatia" hidden>Your <strong>Croatian National ID Card (Osobna iskaznica)</strong> (scan of both front and back) is the top choice, as it usually includes your residential address.</div><div data-country-tip="Romania" hidden>Your <strong>Romanian National ID Card (Carte de identitate)</strong> (scan of both front and back) is the top choice, as it usually includes your residential address.</div><div data-country-tip="Slovenia" hidden>Your <strong>Slovenian National ID Card (Osebna izkaznica)</strong> (scan of both front and back) is the top choice, as it usually includes your residential address.</div><div data-country-tip="Slovakia" hidden>Your <strong>Slovak National ID Card (Ob&#269;iansky preukaz)</strong> (scan of both front and back) is the top choice, as it usually includes your residential address.</div><div data-country-tip="Czech Republic" hidden>Your <strong>Czech National ID Card (Ob&#269;ansk&yacute; pr&#367;kaz)</strong> (scan of both front and back) is the top choice, as it usually includes your residential address.</div><div data-country-tip="Malta" hidden>Your <strong>Maltese National ID Card</strong> (scan of both front and back) is the top choice, as it usually includes your residential address.</div><div data-country-tip="Argentina" hidden>Your <strong>Argentine National ID Card (DNI &mdash; Documento Nacional de Identidad)</strong> (scan of both front and back) is the top choice, as it usually includes your residential address.</div></div></div>
+              </div>
+
+              <div class="rd-order-note rd-order-note--blue"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16.5"/><circle cx="12" cy="7.8" r="0.9" fill="currentColor" stroke="none"/></svg><div><strong>Shortcut: National ID card as Proof of Address</strong><br />If your National ID card includes your address written in the Roman alphabet (e.g., cards from <strong>Italy, France, Germany, Spain, Croatia, Romania, Slovenia, Slovakia, Czech Republic, Malta, or Argentina</strong>), you may simply upload a scan of both sides (front and back) of the document instead of providing a separate proof.</div></div>
+
+              <div class="rd-order-cols">
+                <div>
+                  <h4>Accepted Proof of Address</h4>
+                  <ul>
+                    <li>Utility bill<small>e.g., electricity, water, gas, telecommunications</small></li>
+                    <li>Bank statement<small>e.g., Revolut, Trade Republic, ING Bank, regulated banks</small></li>
+                    <li>An official residence certificate<small>issued by a local authority</small></li>
+                    <li>Driving license<small>only if it indicates the address</small></li>
+                  </ul>
+                  <div class="rd-order-rules">
+                    <p>Important rules:</p>
+                    <ul>
+                      <li>Must be issued in the name of the person requesting the NIF</li>
+                      <li>Must be in the <strong>Roman/Latin alphabet</strong> (documents in <strong>English</strong> are strongly preferred)</li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <h4>Portuguese Address Registration</h4>
+                  <p class="rd-order-help">If you want your NIF to be registered with a Portuguese address and be recognized as a tax resident in Portugal, you must provide:</p>
+                  <ul>
+                    <li><strong>EU Citizens:</strong><small>CRUE (Certificate of Registration of an EU Citizen)</small></li>
+                    <li><strong>Non-EU Citizens:</strong><small>Valid Residence Permit (AIMA/SEF) <em>or</em><br />Proof of appointment with AIMA <em>or</em><br />Official document confirming your application is pending</small></li>
+                    <li><strong>+ Additional proof of Portuguese address</strong><small>e.g., Rental contract, utility bill, etc.</small></li>
+                  </ul>
+                </div>
+              </div>
+
+              <p class="rd-order-tip">Tip: If you don't have a scanner, you can use a free mobile document scanning app (e.g., CamScanner) to create your PDF.</p>
+              <label class="rd-order-file" for="proofOfAddressInput">
+                <input type="file" id="proofOfAddressInput" name="proofOfAddress" accept=".pdf,application/pdf" data-label="Proof of Address" required />
+                <span class="rd-order-file__btn">Choose File</span>
+                <span class="rd-order-file__name" data-rd-filename="proofOfAddressInput">No file chosen</span>
+              </label>
+              <small class="file-help">Accepted format: PDF (Max. 5MB)</small>
+            </div>
+
+            <div class="form-navigation">
+              <button type="button" class="prev-btn">Previous</button>
+              <button type="button" class="next-btn">Next</button>
+            </div>
+          </div>
+          <div class="form-section" data-step="4">
+            <h3><span style="color:var(--blue-600);">Contact</span> information</h3>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required />
+              <p class="rd-order-help" style="margin-top:0.4rem;">This email address will be used to send you all the information related to your request.</p>
+            </div>
+            <div class="form-group">
+              <label for="whatsapp">WhatsApp Number *</label>
+              <div class="rd-order-phone">
+                <select id="phoneCode" name="phoneCode" required><option value="" disabled hidden selected>Country Code</option><option value="+93 (Afghanistan)">Afghanistan (+93)</option><option value="+355 (Albania)">Albania (+355)</option><option value="+213 (Algeria)">Algeria (+213)</option><option value="+376 (Andorra)">Andorra (+376)</option><option value="+244 (Angola)">Angola (+244)</option><option value="+1-268 (Antigua and Barbuda)">Antigua and Barbuda (+1-268)</option><option value="+54 (Argentina)">Argentina (+54)</option><option value="+374 (Armenia)">Armenia (+374)</option><option value="+61 (Australia)">Australia (+61)</option><option value="+43 (Austria)">Austria (+43)</option><option value="+994 (Azerbaijan)">Azerbaijan (+994)</option><option value="+1-242 (Bahamas)">Bahamas (+1-242)</option><option value="+973 (Bahrain)">Bahrain (+973)</option><option value="+880 (Bangladesh)">Bangladesh (+880)</option><option value="+1-246 (Barbados)">Barbados (+1-246)</option><option value="+375 (Belarus)">Belarus (+375)</option><option value="+32 (Belgium)">Belgium (+32)</option><option value="+501 (Belize)">Belize (+501)</option><option value="+229 (Benin)">Benin (+229)</option><option value="+975 (Bhutan)">Bhutan (+975)</option><option value="+591 (Bolivia)">Bolivia (+591)</option><option value="+387 (Bosnia and Herzegovina)">Bosnia and Herzegovina (+387)</option><option value="+267 (Botswana)">Botswana (+267)</option><option value="+55 (Brazil)">Brazil (+55)</option><option value="+673 (Brunei)">Brunei (+673)</option><option value="+359 (Bulgaria)">Bulgaria (+359)</option><option value="+226 (Burkina Faso)">Burkina Faso (+226)</option><option value="+257 (Burundi)">Burundi (+257)</option><option value="+238 (Cabo Verde)">Cabo Verde (+238)</option><option value="+855 (Cambodia)">Cambodia (+855)</option><option value="+237 (Cameroon)">Cameroon (+237)</option><option value="+1 (Canada)">Canada (+1)</option><option value="+236 (Central African Republic)">Central African Republic (+236)</option><option value="+235 (Chad)">Chad (+235)</option><option value="+56 (Chile)">Chile (+56)</option><option value="+86 (China)">China (+86)</option><option value="+57 (Colombia)">Colombia (+57)</option><option value="+269 (Comoros)">Comoros (+269)</option><option value="+242 (Congo)">Congo (+242)</option><option value="+506 (Costa Rica)">Costa Rica (+506)</option><option value="+385 (Croatia)">Croatia (+385)</option><option value="+53 (Cuba)">Cuba (+53)</option><option value="+357 (Cyprus)">Cyprus (+357)</option><option value="+420 (Czech Republic)">Czech Republic (+420)</option><option value="+45 (Denmark)">Denmark (+45)</option><option value="+253 (Djibouti)">Djibouti (+253)</option><option value="+1-767 (Dominica)">Dominica (+1-767)</option><option value="+1-809 (Dominican Republic)">Dominican Republic (+1-809)</option><option value="+593 (Ecuador)">Ecuador (+593)</option><option value="+20 (Egypt)">Egypt (+20)</option><option value="+503 (El Salvador)">El Salvador (+503)</option><option value="+240 (Equatorial Guinea)">Equatorial Guinea (+240)</option><option value="+291 (Eritrea)">Eritrea (+291)</option><option value="+372 (Estonia)">Estonia (+372)</option><option value="+268 (Eswatini)">Eswatini (+268)</option><option value="+251 (Ethiopia)">Ethiopia (+251)</option><option value="+679 (Fiji)">Fiji (+679)</option><option value="+358 (Finland)">Finland (+358)</option><option value="+33 (France)">France (+33)</option><option value="+241 (Gabon)">Gabon (+241)</option><option value="+220 (Gambia)">Gambia (+220)</option><option value="+995 (Georgia)">Georgia (+995)</option><option value="+49 (Germany)">Germany (+49)</option><option value="+233 (Ghana)">Ghana (+233)</option><option value="+30 (Greece)">Greece (+30)</option><option value="+1-473 (Grenada)">Grenada (+1-473)</option><option value="+502 (Guatemala)">Guatemala (+502)</option><option value="+224 (Guinea)">Guinea (+224)</option><option value="+245 (Guinea-Bissau)">Guinea-Bissau (+245)</option><option value="+592 (Guyana)">Guyana (+592)</option><option value="+509 (Haiti)">Haiti (+509)</option><option value="+504 (Honduras)">Honduras (+504)</option><option value="+36 (Hungary)">Hungary (+36)</option><option value="+354 (Iceland)">Iceland (+354)</option><option value="+91 (India)">India (+91)</option><option value="+62 (Indonesia)">Indonesia (+62)</option><option value="+98 (Iran)">Iran (+98)</option><option value="+964 (Iraq)">Iraq (+964)</option><option value="+353 (Ireland)">Ireland (+353)</option><option value="+972 (Israel)">Israel (+972)</option><option value="+39 (Italy)">Italy (+39)</option><option value="+1-876 (Jamaica)">Jamaica (+1-876)</option><option value="+81 (Japan)">Japan (+81)</option><option value="+962 (Jordan)">Jordan (+962)</option><option value="+7 (Kazakhstan)">Kazakhstan (+7)</option><option value="+254 (Kenya)">Kenya (+254)</option><option value="+686 (Kiribati)">Kiribati (+686)</option><option value="+965 (Kuwait)">Kuwait (+965)</option><option value="+996 (Kyrgyzstan)">Kyrgyzstan (+996)</option><option value="+856 (Laos)">Laos (+856)</option><option value="+371 (Latvia)">Latvia (+371)</option><option value="+961 (Lebanon)">Lebanon (+961)</option><option value="+266 (Lesotho)">Lesotho (+266)</option><option value="+231 (Liberia)">Liberia (+231)</option><option value="+218 (Libya)">Libya (+218)</option><option value="+423 (Liechtenstein)">Liechtenstein (+423)</option><option value="+370 (Lithuania)">Lithuania (+370)</option><option value="+352 (Luxembourg)">Luxembourg (+352)</option><option value="+261 (Madagascar)">Madagascar (+261)</option><option value="+265 (Malawi)">Malawi (+265)</option><option value="+60 (Malaysia)">Malaysia (+60)</option><option value="+960 (Maldives)">Maldives (+960)</option><option value="+223 (Mali)">Mali (+223)</option><option value="+356 (Malta)">Malta (+356)</option><option value="+692 (Marshall Islands)">Marshall Islands (+692)</option><option value="+222 (Mauritania)">Mauritania (+222)</option><option value="+230 (Mauritius)">Mauritius (+230)</option><option value="+52 (Mexico)">Mexico (+52)</option><option value="+691 (Micronesia)">Micronesia (+691)</option><option value="+373 (Moldova)">Moldova (+373)</option><option value="+377 (Monaco)">Monaco (+377)</option><option value="+976 (Mongolia)">Mongolia (+976)</option><option value="+382 (Montenegro)">Montenegro (+382)</option><option value="+212 (Morocco)">Morocco (+212)</option><option value="+258 (Mozambique)">Mozambique (+258)</option><option value="+95 (Myanmar)">Myanmar (+95)</option><option value="+264 (Namibia)">Namibia (+264)</option><option value="+674 (Nauru)">Nauru (+674)</option><option value="+977 (Nepal)">Nepal (+977)</option><option value="+31 (Netherlands)">Netherlands (+31)</option><option value="+64 (New Zealand)">New Zealand (+64)</option><option value="+505 (Nicaragua)">Nicaragua (+505)</option><option value="+227 (Niger)">Niger (+227)</option><option value="+234 (Nigeria)">Nigeria (+234)</option><option value="+389 (North Macedonia)">North Macedonia (+389)</option><option value="+47 (Norway)">Norway (+47)</option><option value="+968 (Oman)">Oman (+968)</option><option value="+92 (Pakistan)">Pakistan (+92)</option><option value="+680 (Palau)">Palau (+680)</option><option value="+507 (Panama)">Panama (+507)</option><option value="+675 (Papua New Guinea)">Papua New Guinea (+675)</option><option value="+595 (Paraguay)">Paraguay (+595)</option><option value="+51 (Peru)">Peru (+51)</option><option value="+63 (Philippines)">Philippines (+63)</option><option value="+48 (Poland)">Poland (+48)</option><option value="+351 (Portugal)">Portugal (+351)</option><option value="+974 (Qatar)">Qatar (+974)</option><option value="+40 (Romania)">Romania (+40)</option><option value="+7 (Russia)">Russia (+7)</option><option value="+250 (Rwanda)">Rwanda (+250)</option><option value="+1-869 (Saint Kitts and Nevis)">Saint Kitts and Nevis (+1-869)</option><option value="+1-758 (Saint Lucia)">Saint Lucia (+1-758)</option><option value="+1-784 (Saint Vincent and the Grenadines)">Saint Vincent and the Grenadines (+1-784)</option><option value="+685 (Samoa)">Samoa (+685)</option><option value="+378 (San Marino)">San Marino (+378)</option><option value="+239 (Sao Tome and Principe)">Sao Tome and Principe (+239)</option><option value="+966 (Saudi Arabia)">Saudi Arabia (+966)</option><option value="+221 (Senegal)">Senegal (+221)</option><option value="+381 (Serbia)">Serbia (+381)</option><option value="+248 (Seychelles)">Seychelles (+248)</option><option value="+232 (Sierra Leone)">Sierra Leone (+232)</option><option value="+65 (Singapore)">Singapore (+65)</option><option value="+421 (Slovakia)">Slovakia (+421)</option><option value="+386 (Slovenia)">Slovenia (+386)</option><option value="+677 (Solomon Islands)">Solomon Islands (+677)</option><option value="+252 (Somalia)">Somalia (+252)</option><option value="+27 (South Africa)">South Africa (+27)</option><option value="+82 (South Korea)">South Korea (+82)</option><option value="+34 (Spain)">Spain (+34)</option><option value="+94 (Sri Lanka)">Sri Lanka (+94)</option><option value="+249 (Sudan)">Sudan (+249)</option><option value="+597 (Suriname)">Suriname (+597)</option><option value="+46 (Sweden)">Sweden (+46)</option><option value="+41 (Switzerland)">Switzerland (+41)</option><option value="+963 (Syria)">Syria (+963)</option><option value="+886 (Taiwan)">Taiwan (+886)</option><option value="+992 (Tajikistan)">Tajikistan (+992)</option><option value="+255 (Tanzania)">Tanzania (+255)</option><option value="+66 (Thailand)">Thailand (+66)</option><option value="+228 (Togo)">Togo (+228)</option><option value="+676 (Tonga)">Tonga (+676)</option><option value="+1-868 (Trinidad and Tobago)">Trinidad and Tobago (+1-868)</option><option value="+216 (Tunisia)">Tunisia (+216)</option><option value="+90 (Turkey)">Turkey (+90)</option><option value="+993 (Turkmenistan)">Turkmenistan (+993)</option><option value="+688 (Tuvalu)">Tuvalu (+688)</option><option value="+256 (Uganda)">Uganda (+256)</option><option value="+380 (Ukraine)">Ukraine (+380)</option><option value="+971 (United Arab Emirates)">United Arab Emirates (+971)</option><option value="+44 (United Kingdom)">United Kingdom (+44)</option><option value="+1 (United States of America)">United States of America (+1)</option><option value="+598 (Uruguay)">Uruguay (+598)</option><option value="+998 (Uzbekistan)">Uzbekistan (+998)</option><option value="+678 (Vanuatu)">Vanuatu (+678)</option><option value="+379 (Vatican City)">Vatican City (+379)</option><option value="+58 (Venezuela)">Venezuela (+58)</option><option value="+84 (Vietnam)">Vietnam (+84)</option><option value="+967 (Yemen)">Yemen (+967)</option><option value="+260 (Zambia)">Zambia (+260)</option><option value="+263 (Zimbabwe)">Zimbabwe (+263)</option></select>
+                <input type="tel" id="whatsapp" name="whatsapp" placeholder="600 000 000" pattern="[0-9 +\-]{6,20}" title="Digits, spaces, + and - only (6–20 characters)" required />
+              </div>
+              <div class="rd-order-note rd-order-note--blue"><span><strong>Privacy Notice:</strong><br />We will not use your number for any type of SPAM. It will only be used if we cannot contact you via email (for example, if the email address is incorrect or the mailbox is full).</span></div>
+            </div>
+            <div class="form-navigation">
+              <button type="button" class="prev-btn">Previous</button>
+              <button type="button" class="next-btn">Next</button>
+            </div>
+          </div>
+          <div class="form-section" data-step="5">
+            <h3>Who told you <span style="color:var(--blue-600);">about us?</span></h3>
+            <p class="referral-subtitle">Spill the beans! We're curious, where did you first hear about us? Please, pick all that apply:</p>
+            <div class="checkbox-group">
+              <div class="checkbox-option">
+                <input type="checkbox" id="instagram" name="referralSource[]" value="Instagram" />
+                <label for="instagram">Instagram</label>
+              </div>
+              <div class="checkbox-option">
+                <input type="checkbox" id="tiktok" name="referralSource[]" value="TikTok" />
+                <label for="tiktok">TikTok</label>
+              </div>
+              <div class="checkbox-option">
+                <input type="checkbox" id="google" name="referralSource[]" value="Google Search" />
+                <label for="google">Google Search</label>
+              </div>
+              <div class="checkbox-option">
+                <input type="checkbox" id="facebook" name="referralSource[]" value="Facebook" />
+                <label for="facebook">Facebook</label>
+              </div>
+              <div class="checkbox-option">
+                <input type="checkbox" id="friend" name="referralSource[]" value="Friend" />
+                <label for="friend">From a friend or other Erasmus student</label>
+              </div>
+              <div class="checkbox-option">
+                <input type="checkbox" id="university" name="referralSource[]" value="University" />
+                <label for="university">University</label>
+              </div>
+              <div class="checkbox-option">
+                <input type="checkbox" id="partners" name="referralSource[]" value="Partners" />
+                <label for="partners">Our Partners</label>
+              </div>
+              <div class="checkbox-option">
+                <input type="checkbox" id="whatsapp-ref" name="referralSource[]" value="WhatsApp" />
+                <label for="whatsapp-ref">WhatsApp or Telegram group</label>
+              </div>
+              <div class="checkbox-option">
+                <input type="checkbox" id="reddit" name="referralSource[]" value="Reddit" />
+                <label for="reddit">Reddit or online forum</label>
+              </div>
+              <div class="checkbox-option other-option">
+                <input type="checkbox" id="other" name="referralSource[]" value="Other" />
+                <label for="other">Other (please specify):</label>
+              </div>
+              <div id="otherSourceWrap" hidden><input type="text" id="otherSource" name="otherSource" class="other-input" placeholder="Tell us more..." /></div>
+            </div>
+            <div class="form-navigation">
+              <button type="button" class="prev-btn">Previous</button>
+              <button type="button" class="next-btn">Next</button>
+            </div>
+          </div>
+          <div class="form-section" data-step="6">
+            <h3><span style="color:var(--blue-600);">Review</span> your information</h3>
+            <p class="referral-subtitle">Please verify that all the details below are correct before submitting your request.</p>
+            <div class="rd-review">
+              <div class="rd-review__grid"><div class="rd-review__item"><h4>Service</h4><p data-review="service">-</p></div></div>
+              <div class="rd-review__grid">
+                <div class="rd-review__item rd-span-2"><h4>Full Name</h4><p data-review="fullName">-</p></div><div class="rd-review__item"><h4>Sex</h4><p data-review="sex">-</p></div><div class="rd-review__item"><h4>Date of Birth</h4><p data-review="dateOfBirth">-</p></div>
+                <div class="rd-review__item"><h4>Nationality</h4><p data-review="nationality">-</p></div><div class="rd-review__item"><h4>Place of Birth</h4><p data-review="placeOfBirth">-</p></div><div class="rd-review__item"><h4>Document</h4><p data-review="document">-</p></div>
+                <div class="rd-review__item"><h4>Doc Expiry</h4><p data-review="documentExpiry">-</p></div><div class="rd-review__item"><h4>Issuing Authority</h4><p data-review="issuingAuthority">-</p></div>
+              </div>
+              <div class="rd-review__grid"><div class="rd-review__item rd-span-2"><h4>Address</h4><p data-review="address">-</p></div></div>
+              <div class="rd-review__grid"><div class="rd-review__item"><h4>Email</h4><p data-review="email">-</p></div><div class="rd-review__item"><h4>WhatsApp</h4><p data-review="whatsapp">-</p></div></div>
+              <div class="rd-review__grid"><div class="rd-review__item rd-span-2"><h4>Files Attached</h4><p data-review="files">-</p></div></div>
+            </div>
+
+            <div class="rd-confirm">
+              <input type="checkbox" id="confirmReview" name="confirmReview" required />
+              <label for="confirmReview">I have carefully reviewed all the information above and confirm that it is accurate, correctly spelled, and corresponds exactly to the uploaded documents. I understand that submitting incorrect information may delay my request or result in rejection by the Portuguese Tax Authority.</label>
+            </div>
+
+            <div class="form-navigation">
+              <button type="button" class="prev-btn" data-goto="2">Edit Information</button>
+              <button type="submit" class="submit-btn">Proceed to Payment</button>
+            </div>
+          </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    </main>
+    <footer class="rd-footer">
+      <div class="rd-container">
+        <div class="rd-footer__grid">
+          <div>
+            <div class="rd-footer__logo">
+              <img src="assets/images/logo.png" alt="NIF4Erasmus" width="104" height="32" loading="lazy" />
+            </div>
+            <p style="font-size:0.9rem;line-height:1.6;max-width:22rem;">Helping international students get their Portuguese NIF without the stress.</p>
+          </div>
+
+          <div>
+            <h4>Services</h4>
+            <ul>
+              <li><a href="form.html">NIF (Portuguese Tax Number)</a></li>
+              <li><a href="form.html">NIF and Tax Representative</a></li>
+              <li><a href="index.html#other-legal-services" data-rd-scroll="other-legal-services">Other Legal Services</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Support</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contacts.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Contact</h4>
+            <ul style="margin-bottom:1.5rem;">
+              <li><a href="mailto:info@nif4erasmus.com">info@nif4erasmus.com</a></li>
+            </ul>
+
+            <div class="rd-footer__social">
+            <a href="https://www.instagram.com/nif4erasmus/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="rd-footer__social-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://www.facebook.com/people/NIF-4-Erasmus/61571569951503/?locale=pt_PT" target="_blank" rel="noopener" aria-label="Facebook"><svg class="rd-footer__social-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.tiktok.com/@nif4erasmus" target="_blank" rel="noopener" aria-label="TikTok"><svg class="rd-footer__social-icon" fill="currentColor" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.12-3.44-3.17-3.64-5.46-.22-2.18.73-4.4 2.46-5.71 1.48-1.12 3.42-1.57 5.25-1.19.01 1.38-.01 2.76.01 4.14-.94-.28-1.95-.3-2.88.08-1.15.48-1.89 1.6-1.84 2.84.05 1.25.96 2.31 2.18 2.61 1.41.34 2.91-.25 3.65-1.47.38-.63.53-1.36.5-2.09.04-5.32 0-10.65.02-15.98z"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="rd-footer__bottom">
+          <div>&copy; 2025 NIF4Erasmus. All rights reserved.</div>
+          <div class="rd-footer__bottom-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-conditions.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts/main.js" defer></script>
+    <script src="assets/js/redesign.js" defer></script>
+  </body>
+</html>
