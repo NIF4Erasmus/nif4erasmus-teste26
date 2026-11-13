@@ -1,0 +1,949 @@
+
+/* ==========================================================================
+   Base styles and CSS Reset
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --brand-color: #1828f8;
+  --brand-color-light: rgba(24, 40, 248, 0.1);
+  --brand-color-dark: #0a1ad9;
+  --accent-color: #e0b814;
+  --accent-color-dark: #af860c;
+  --text-color: #333;
+  --text-color-light: #555;
+  --bg-color: #f9f9f9;
+  --white: #fff;
+  
+  --shadow-sm: 0 3px 10px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.15);
+  
+  --font-heading: "Dela Gothic One", sans-serif;
+  --font-body: "Montserrat", sans-serif;
+  
+  --header-height: 80px;
+  --section-spacing: 4rem;
+  --border-radius: 10px;
+  --border-radius-pill: 50px;
+  
+  --container-max-width: 1200px;
+  --container-padding: 0 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: var(--header-height);
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 15px; /* Slightly smaller base font on mobile */
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--text-color);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--brand-color);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+  margin-bottom: 1.5rem;
+  font-family: var(--font-body);
+  color: var(--text-color-light);
+}
+
+@media screen and (max-width: 768px) {
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+}
+
+@media screen and (max-width: 480px) {
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.6rem; }
+  h3 { font-size: 1.4rem; }
+}
+
+/* ==========================================================================
+   Layout & Container
+   ========================================================================== */
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--container-padding);
+}
+
+.section-padding {
+  padding: var(--section-spacing) 0;
+}
+
+.spacer {
+  height: var(--header-height);
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+
+header {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  height: var(--header-height);
+  background-color: var(--white);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius-pill);
+  padding: 0 2rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+header .spacer {
+  height: 0;
+  flex: 1;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--brand-color);
+  text-decoration: none;
+  margin: auto;
+}
+
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  width: 100%;
+  list-style: none;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-heading);
+  text-decoration: none;
+  color: var(--brand-color);
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--brand-color);
+}
+
+nav ul li a.active::after,
+nav ul li a:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--brand-color);
+  bottom: 0;
+  left: 0;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--brand-color);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+@media screen and (max-width: 1095px) {
+  header {
+    padding: 0 1.5rem;
+    height: 70px;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  header .spacer {
+    display: none;
+  }
+  
+  .logo {
+    font-size: 1.3rem;
+  }
+  
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: var(--white);
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 100px 20px 40px;
+    transition: all 0.3s ease;
+    z-index: 10;
+    overflow-y: auto;
+  }
+  
+  nav.active {
+    right: 0;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    min-height: calc(100% - 100px);
+    padding-bottom: 40px;
+  }
+  
+  nav ul li a {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   Home Section / Hero
+   ========================================================================== */
+
+#home {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--white);
+  padding-top: 6rem;
+  background-image: url("../images/home.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 0;
+}
+
+#home .content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  padding: 2rem;
+  margin-left: 10%;
+  text-align: left;
+}
+
+#home h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: var(--brand-color);
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--white);
+}
+
+#home p {
+  font-size: 1.4rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  color: var(--white);
+  -webkit-text-stroke-width: 0.5px;
+}
+
+#home a {
+  background-color: var(--accent-color);
+  color: var(--white);
+  font-weight: 600;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--border-radius-pill);
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  display: inline-block;
+  font-family: var(--font-body);
+}
+
+#home a:hover {
+  background-color: var(--accent-color-dark);
+  transform: translateY(-2px);
+}
+
+@media screen and (max-width: 1095px) {
+  #home .content {
+    margin-left: 5%;
+    padding: 1.5rem;
+  }
+  
+  #home h1 {
+    font-size: 2.5rem;
+  }
+  
+  #home p {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #home .content {
+    padding: 1rem;
+  }
+  
+  #home h1 {
+    font-size: 2rem;
+  }
+  
+  #home p {
+    font-size: 1rem;
+  }
+  
+  #home a {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* ==========================================================================
+   Services Section
+   ========================================================================== */
+
+#services {
+  background-color: var(--bg-color);
+}
+
+#services .container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+#services h2 {
+  text-align: start;
+  margin-bottom: 1.5rem;
+}
+
+.services-intro {
+  max-width: 800px;
+  margin-bottom: 4rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: start;
+}
+
+.services-cards {
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+  margin-bottom: 4rem;
+}
+
+.service-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  padding: 2rem;
+  flex: 1;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  padding-bottom: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.service-card p {
+  line-height: 1.5;
+  flex-grow: 1;
+  font-family: var(--font-body);
+}
+
+.service-btn {
+  background-color: var(--brand-color);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-pill);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 1.25rem;
+  min-width: 160px;
+  text-align: center;
+}
+
+.service-btn:hover {
+  background-color: var(--brand-color-dark);  
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.service-btn:focus,
+.get-nif-btn:focus {
+  outline: 3px solid rgba(24, 40, 248, 0.4);
+}
+
+.service-btn h4 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--white);
+}
+
+.price-amount {
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1095px) {
+  .services-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .service-card {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+}
+
+/* ==========================================================================
+   Content Section Styles (Get NIF, Documents, etc.)
+   ========================================================================== */
+
+/* Common title styling for left-aligned sections */
+.left-aligned {
+  color: var(--brand-color);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  text-align: start;
+}
+
+.left-aligned::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background-color: var(--brand-color);
+}
+
+.right-aligned {
+  color: var(--brand-color);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  text-align: right;
+}
+
+.right-aligned:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  width: 80px;
+  height: 4px;
+  background-color: var(--brand-color);
+  left: auto;
+  right: 0;
+}
+
+/* Get Your NIF Section */
+.get-nif-section {
+  margin-top: var(--section-spacing);
+  text-align: center;
+}
+
+.get-nif-content {
+  display: flex;
+  align-items: stretch;
+  gap: 40px;
+  text-align: left;
+}
+
+.get-nif-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.get-nif-text p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  font-family: var(--font-body);
+}
+
+.get-nif-btn {
+  background-color: var(--accent-color);
+  color: var(--white);
+  border: none;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--border-radius-pill);
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  outline: none;
+  display: inline-block;
+  text-decoration: none;
+  font-family: var(--font-body);
+}
+
+.get-nif-btn:hover {
+  background-color: var(--accent-color-dark);
+  transform: translateY(-2px);
+}
+
+.get-nif-image, .get-tax-image {
+  flex: 1;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.get-nif-image img, .get-tax-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Which Documents Do I Need Section */
+.documents-section {
+  margin-top: var(--section-spacing);
+}
+
+.documents-content {
+  display: flex;
+  align-items: stretch;
+  gap: 40px;
+  text-align: left;
+}
+
+.documents-image {
+  flex: 1;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.documents-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.documents-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.documents-intro {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  font-family: var(--font-body);
+}
+
+.documents-list {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  font-family: var(--font-body);
+}
+
+.documents-list li {
+  margin-bottom: 1rem;
+}
+
+.nested-list {
+  list-style-type: circle;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  font-family: var(--font-body);
+}
+
+.nested-list li {
+  margin: 0.25rem 0;
+}
+
+/* Student NIF Section */
+.student-nif-section {
+  text-align: start;
+  margin-top: var(--section-spacing);
+}
+
+.student-nif-item {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.student-nif-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.student-nif-item h3 {
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  font-family: var(--font-heading);
+}
+
+.student-nif-item p {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: var(--font-body);
+}
+
+/* Process Flow Section */
+.process-flow-section {
+  text-align: center;
+  padding-bottom: 4rem;
+  position: relative;
+  margin-top: 50px;
+}
+
+.process-flow-title {
+  color: var(--brand-color);
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-family: var(--font-heading);
+}
+
+.process-flow-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  gap: 5%;
+}
+
+.process-step {
+  flex: 1;
+  background-color: var(--white);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 200px;
+  position: relative;
+  z-index: 2;
+}
+
+.process-step:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.step-content h3 {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  font-family: var(--font-heading);
+}
+
+.step-content p {
+  line-height: 1.5;
+  text-align: center;
+  font-size: 0.95rem;
+  margin: auto 0;
+  font-family: var(--font-body);
+}
+
+.order-now-btn {
+  background-color: var(--accent-color);
+  color: var(--white);
+  border: none;
+  padding: 0.85rem 2.5rem;
+  border-radius: var(--border-radius-pill);
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-heading);
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin-top: 2rem;
+}
+
+.order-now-btn:hover {
+  background-color: var(--accent-color-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Foreign Citizen Section */
+.foreign-citizen-section,
+.foreign-student-section {
+  text-align: start;
+  margin-top: var(--section-spacing);
+}
+
+.foreign-citizen-section p,
+.foreign-student-section p {
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  font-family: var(--font-body);
+}
+
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
+
+@media screen and (max-width: 1095px) {
+  :root {
+    --section-spacing: 3rem;
+  }
+  
+  .left-aligned, .right-aligned {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+  
+  .left-aligned::after, .right-aligned::after {
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+  }
+  
+  .get-nif-content,
+  .documents-content {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+  
+  .get-nif-text, .get-nif-image,
+  .documents-text, .documents-image {
+    width: 100%;
+  }
+  
+  .get-nif-btn {
+    align-self: center;
+    margin-top: 1rem;
+  }
+  
+  .process-flow-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .process-step {
+    width: 80%;
+    max-width: 350px;
+  }
+  
+  .process-flow-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --section-spacing: 2.5rem;
+  }
+  
+  .container {
+    padding: 60px 20px;
+  }
+  
+  .documents-intro,
+  .documents-list {
+    font-size: 1rem;
+  }
+  
+  .process-step {
+    width: 95%;
+  }
+  
+  .order-now-btn {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --section-spacing: 2rem;
+  }
+  
+  .left-aligned, .right-aligned,
+  .student-nif-title, .foreign-citizen-title,
+  .foreign-student-title {
+    font-size: 1.6rem;
+  }
+  
+  .process-flow-title {
+    font-size: 1.5rem;
+  }
+  
+  .get-nif-text p,
+  .documents-intro,
+  .documents-list {
+    font-size: 0.95rem;
+  }
+  
+  .service-btn {
+    min-width: 140px;
+  }
+  
+  .process-step {
+    padding: 1.2rem;
+  }
+}
+
+/* ==========================================================================
+   Image Spacer
+   ========================================================================== */
+
+#image-spacer-section {
+  padding: 0;
+  margin: 0;
+}
+
+#image-spacer-section img {
+  width: 100%;
+  max-height: 400px;
+  padding: 0;
+  object-fit: cover;
+  display: block;
+}
