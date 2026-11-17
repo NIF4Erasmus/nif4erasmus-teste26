@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
     measurementId: "G-5GFPK7SM1T",
   };
   const STRIPE_PAYMENT_LINKS = {
-    nifOnly: "https://buy.stripe.com/5kQbJ0fL186s6d7cu3bsc03",
-    nifAndTax: "https://buy.stripe.com/28E14m9mD5YkdFzbpZbsc04",
+    nifOnly: "https://buy.stripe.com/test_dRm00ibuL5Yk44ZgKjbsc01",
+    nifAndTax: "https://buy.stripe.com/test_28E8wO1Ub1I40SN2Ttbsc02",
   };
 
   // Initialize Firebase (guarded: if the SDK is blocked/offline the rest of the site must still work)
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize EmailJS
   (function () {
-    if (typeof emailjs !== "undefined") emailjs.init("B_OgUkgT3w8lysw_g");
+    if (typeof emailjs !== "undefined") emailjs.init("4p7vp9ScdkLBP_9fx");
   })();
 
   // Update the uploadFile function to use the storage reference
@@ -257,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Send email using EmailJS
       // Replace with your service ID and template ID
-      emailjs.send("service_4ekh8ho", "template_00yzatn", formData).then(
+      emailjs.send("service_2o3ozpv", "template_r7k657e", formData).then(
         function (response) {
           document.getElementById("form-status").textContent =
             "Message sent successfully!";
@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Address → Contact → Who told you about us? → Review
   // Keeps: Firebase Storage uploads under documents/<email>/..., the Stripe
   // payment links, and the sessionStorage "formSubmission" hand-off that
-  // success.html sends through EmailJS (template_p42864p).
+  // success.html sends through EmailJS (template_11dv42p).
   // =====================================================================
   const form = document.getElementById("personalInfoForm");
   if (form) {
@@ -638,7 +638,7 @@ document.addEventListener("DOMContentLoaded", () => {
           email;
         const NA = "Not applicable";
 
-        // 2) Data handed to success.html → EmailJS (template_p42864p).
+        // 2) Data handed to success.html → EmailJS (template_11dv42p).
         //    Existing keys are unchanged; new ones are added.
         const formDataObject = {
           personalDetails: {
@@ -811,8 +811,8 @@ document.addEventListener("DOMContentLoaded", () => {
           // Send email using EmailJS
           emailjs
             .send(
-              "service_4ekh8ho", // Your service ID
-              "template_00yzatn", // Replace with your template ID from EmailJS
+              "service_2o3ozpv", // Your service ID
+              "template_r7k657e", // Replace with your template ID from EmailJS
               {
                 email: fullNumber,
                 name: "Callback Request",
@@ -854,7 +854,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Parsed form data:", formData);
 
         // Send email with the parsed form data
-        emailjs.send("service_4ekh8ho", "template_p42864p", formData).then(
+        emailjs.send("service_2o3ozpv", "template_11dv42p", formData).then(
           function (response) {
             console.log("Email sent successfully:", response);
             // Clear the session storage after successful email
