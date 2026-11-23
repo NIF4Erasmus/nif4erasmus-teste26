@@ -322,7 +322,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     function isMinor() {
       const v = val("dateOfBirth");
-      if (!v) return false;
+      if (yearOf(v) < 1900) return false;
       const dob = new Date(v);
       const today = new Date();
       let age = today.getFullYear() - dob.getFullYear();
@@ -363,19 +363,41 @@ document.addEventListener("DOMContentLoaded", () => {
       const day = String(d.getDate()).padStart(2, "0");
       return d.getFullYear() + "-" + m + "-" + day;
     }
+    // A date field only counts once the 4-digit year is complete (while typing "2","20","202" the browser
+    // already reports 0002/0020/0202, which must not trigger any error).
+    function yearOf(v) {
+      return v && /^\d{4}-\d{2}-\d{2}$/.test(v) ? parseInt(v.slice(0, 4), 10) : 0;
+    }
     function isExpired() {
       const v = val("documentExpiry");
-      return !!v && v < minExpiryISO();
+      return yearOf(v) >= 1900 && v < minExpiryISO();
     }
     function refreshExpiry() {
       const input = el("documentExpiry");
       if (!input) return;
-      input.min = minExpiryISO();
+      // set limits only when they change: rewriting them on every keystroke interferes with typing
+      const mn = minExpiryISO();
+      if (input.getAttribute("min") !== mn) input.setAttribute("min", mn);
       const dob = el("dateOfBirth");
-      if (dob) dob.max = todayISO();
+      const td = todayISO();
+      if (dob && dob.getAttribute("max") !== td) dob.setAttribute("max", td);
+      const bad = isExpired();
       const hint = el("expiryHint");
-      if (hint) hint.hidden = !isExpired();
-      input.classList.toggle("error", isExpired());
+      if (hint && hint.hidden === bad) hint.hidden = !bad;
+      input.classList.toggle("error", bad);
+    }
+    // Date of birth: sensible range (checked only once the year is complete)
+    function refreshDob() {
+      const dob = el("dateOfBirth");
+      if (!dob) return;
+      const v = dob.value;
+      const y = yearOf(v);
+      let msg = "";
+      if (y) {
+        if (y < 1900) msg = "Please enter a valid year of birth.";
+        else if (v > todayISO()) msg = "The date of birth cannot be in the future.";
+      }
+      dob.setCustomValidity(msg);
     }
     // Country-code field: must be one of the options of the list
     function refreshPhoneCode() {
@@ -396,6 +418,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
     function refreshConditionals() {
+      refreshDob();
       setBlock("visaBlock", isNonEu(), ["visaFile"]);
       setBlock("minorBlock", isMinor(), ["birthCertificate", "parentPassport"]);
       const nonEuNote = el("minorNonEuNote");
@@ -674,7 +697,7 @@ document.addEventListener("DOMContentLoaded", () => {
       refreshGates();
     });
     form.addEventListener("input", (e) => {
-      if (e.target && e.target.id === "dateOfBirth") refreshConditionals();
+      if (e.target && e.target.id === "dateOfBirth") { refreshDob(); refreshConditionals(); }
       if (e.target && e.target.id === "documentExpiry") refreshExpiry();
       if (e.target && e.target.id === "phoneCode") refreshPhoneCode();
     });

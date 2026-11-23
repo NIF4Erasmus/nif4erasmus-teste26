@@ -56,7 +56,7 @@ form [hidden]{display:none!important}
 #countryTips > div{margin-top:.25rem}
 .rd-order-cols li::before{content:"• ";color:#9ca3af}
 .rd-order-list li::before{content:"• "}
-@media (min-width:640px){.sm\:w-1\/2{width:50%}}
+@media (min-width:640px){.sm-w-half-unused{width:50%}}
 
 /* ---- order form: uploaded documents list (review step) ---- */
 .rd-files{display:flex;flex-direction:column;border:1px solid #e5e7eb;border-radius:.75rem;background:#fff;overflow:hidden;margin-top:.5rem}
@@ -76,3 +76,11 @@ form [hidden]{display:none!important}
 .rd-file-error[hidden]{display:none!important}
 .rd-email-fix{background:none;border:0;padding:0;font:inherit;font-weight:700;color:#2563eb;text-decoration:underline;cursor:pointer}
 input[type=file].error + .rd-order-file__btn{outline:2px solid #dc2626;outline-offset:2px}
+
+/* order form layout helpers */
+.form-group.flex.flex-col > select.mt-auto,.form-group.flex.flex-col > input.mt-auto{margin-top:auto}
+.rd-expiry-hint{margin-top:-.75rem}
+@media(min-width:768px){.rd-expiry-hint{grid-column:span 2 / span 2}}
+@media(min-width:640px){.rd-order-phone .rd-phone-code{width:14rem;flex:none}}
+/* same height for every text/date/select control in the order form */
+.form-section input[type=text],.form-section input[type=email],.form-section input[type=tel],.form-section input[type=date],.form-section select{height:3rem;box-sizing:border-box}
