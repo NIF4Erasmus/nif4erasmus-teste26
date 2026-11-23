@@ -440,6 +440,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
         [d, m, y].forEach((sel) => sel.addEventListener("change", sync));
+        box._sync = sync;
       });
     }
 
@@ -696,6 +697,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ---------- navigation ----------
     function showStep(n) {
       currentStep = n;
+      try { sessionStorage.setItem("rdStep", String(n)); } catch (e) {}
       sections.forEach((s) => {
         s.classList.toggle("active", parseInt(s.dataset.step) === n);
       });
@@ -980,6 +982,32 @@ document.addEventListener("DOMContentLoaded", () => {
         submitBtn.textContent = "Proceed to Payment";
         refreshGates();
       }
+    });
+
+    // Back from Stripe / other page: the browser restores the filled fields (even the PDFs) but the wizard
+    // would start at step 1. Re-sync the date dropdowns and return to the step the client was on.
+    function restoreAfterBack() {
+      form.querySelectorAll(".rd-date").forEach((b) => b._sync && b._sync());
+      refreshPhoneCode();
+      refreshConditionals();
+      let saved = 1;
+      try { saved = parseInt(sessionStorage.getItem("rdStep"), 10) || 1; } catch (e) {}
+      if (saved > 1 && saved <= TOTAL_STEPS) {
+        showStep(saved);
+        const t = form.closest(".rd-order-card") || form;
+        window.scrollTo(0, 0);
+        t.scrollIntoView({ block: "start" });
+      }
+    }
+    const navEntry = performance.getEntriesByType ? performance.getEntriesByType("navigation")[0] : null;
+    const cameBack = !!navEntry && navEntry.type === "back_forward";
+    if (cameBack) {
+      window.addEventListener("load", () => setTimeout(restoreAfterBack, 250));
+    } else {
+      try { sessionStorage.removeItem("rdStep"); } catch (e) {}
+    }
+    window.addEventListener("pageshow", (ev) => {
+      if (ev.persisted) setTimeout(restoreAfterBack, 50);
     });
 
     // initial state
