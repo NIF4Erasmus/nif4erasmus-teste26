@@ -375,16 +375,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function refreshExpiry() {
       const input = el("documentExpiry");
       if (!input) return;
-      // set limits only when they change: rewriting them on every keystroke interferes with typing
-      const mn = minExpiryISO();
-      if (input.getAttribute("min") !== mn) input.setAttribute("min", mn);
-      const dob = el("dateOfBirth");
-      const td = todayISO();
-      if (dob && dob.getAttribute("max") !== td) dob.setAttribute("max", td);
       const bad = isExpired();
       const hint = el("expiryHint");
       if (hint && hint.hidden === bad) hint.hidden = !bad;
-      input.classList.toggle("error", bad);
+      const w = input.closest(".rd-date");
+      if (w) w.classList.toggle("error", bad);
     }
     // Date of birth: sensible range (checked only once the year is complete)
     function refreshDob() {
@@ -404,8 +399,48 @@ document.addEventListener("DOMContentLoaded", () => {
       const input = el("phoneCode");
       const list = el("phoneCodeList");
       if (!input || !list) return;
-      const ok = Array.from(list.options).some((o) => o.value === input.value);
+      const ok = Array.from(list.options).some((o) => o.value === input.value || o.value.split(" ")[0] === input.value.trim());
       input.setCustomValidity(!input.value || ok ? "" : "Please choose a country code from the list.");
+    }
+
+    // ---------- date pickers: three dropdowns (day / month / year) ----------
+    // They write YYYY-MM-DD into the hidden text input (id = documentExpiry / dateOfBirth),
+    // so the rest of the form logic keeps working. No typing, no calendar pop-up.
+    function initDateSelects() {
+      const thisYear = new Date().getFullYear();
+      form.querySelectorAll(".rd-date").forEach((box) => {
+        const hidden = box.querySelector(".rd-date__value");
+        const d = box.querySelector('[data-part="d"]');
+        const m = box.querySelector('[data-part="m"]');
+        const y = box.querySelector('[data-part="y"]');
+        const years = [];
+        if (box.dataset.kind === "future") {
+          for (let i = thisYear; i <= thisYear + 25; i++) years.push(i);
+        } else {
+          for (let i = thisYear; i >= 1920; i--) years.push(i);
+        }
+        years.forEach((yr) => {
+          const o = document.createElement("option");
+          o.value = String(yr);
+          o.textContent = String(yr);
+          y.appendChild(o);
+        });
+        function sync() {
+          // days that do not exist in the chosen month/year are disabled (e.g. 31 February)
+          const max = m.value && y.value ? new Date(+y.value, +m.value, 0).getDate() : 31;
+          Array.from(d.options).forEach((o) => {
+            if (o.value) o.disabled = parseInt(o.value, 10) > max;
+          });
+          if (d.value && parseInt(d.value, 10) > max) d.value = "";
+          const iso = d.value && m.value && y.value ? y.value + "-" + m.value + "-" + d.value : "";
+          if (hidden.value !== iso) {
+            hidden.value = iso;
+            hidden.dispatchEvent(new Event("input", { bubbles: true }));
+            hidden.dispatchEvent(new Event("change", { bubbles: true }));
+          }
+        }
+        [d, m, y].forEach((sel) => sel.addEventListener("change", sync));
+      });
     }
 
     // ---------- conditional blocks ----------
@@ -691,6 +726,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (target >= 1) showStep(target);
       })
     );
+    // after picking e.g. "+33 (France)" keep only the code, so the field stays short
+    const pc = el("phoneCode");
+    if (pc) {
+      pc.addEventListener("change", () => {
+        const hit = Array.from(el("phoneCodeList").options).find((o) => o.value === pc.value);
+        if (hit) pc.value = hit.value.split(" ")[0];
+        refreshPhoneCode();
+      });
+    }
     form.addEventListener("change", () => {
       refreshPhoneCode();
       refreshConditionals();
@@ -939,6 +983,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // initial state
+    initDateSelects();
     refreshConditionals();
     showStepInitial();
     function showStepInitial() {
