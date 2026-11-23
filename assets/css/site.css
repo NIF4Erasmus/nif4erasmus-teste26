@@ -56,3 +56,23 @@ form [hidden]{display:none!important}
 #countryTips > div{margin-top:.25rem}
 .rd-order-cols li::before{content:"• ";color:#9ca3af}
 .rd-order-list li::before{content:"• "}
+@media (min-width:640px){.sm\:w-1\/2{width:50%}}
+
+/* ---- order form: uploaded documents list (review step) ---- */
+.rd-files{display:flex;flex-direction:column;border:1px solid #e5e7eb;border-radius:.75rem;background:#fff;overflow:hidden;margin-top:.5rem}
+.rd-files__row{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-bottom:1px solid #f3f4f6}
+.rd-files__row:last-child{border-bottom:0}
+.rd-files__icon{display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:.5rem;background:#eff6ff;color:#155dfc;flex-shrink:0}
+.rd-files__row.is-missing .rd-files__icon{background:#fef2f2;color:#dc2626}
+.rd-files__text{display:flex;flex-direction:column;min-width:0;flex:1}
+.rd-files__label{font-size:.875rem;font-weight:600;color:#111827;text-transform:none;letter-spacing:0}
+.rd-files__name{font-size:.75rem;font-weight:500;color:#6b7280;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-transform:none;letter-spacing:0}
+.rd-files__badge{display:inline-flex;align-items:center;gap:.25rem;font-size:.75rem;font-weight:700;padding:.2rem .6rem;border-radius:9999px;flex-shrink:0;text-transform:none;letter-spacing:0}
+.rd-files__badge.is-ok{background:#ecfdf5;color:#047857}
+.rd-files__badge.is-missing{background:#fef2f2;color:#b91c1c}
+
+/* inline hints under fields (file errors, email typo) */
+.rd-file-error{margin:.35rem 0 0;font-size:.75rem;line-height:1.4;font-weight:500;color:#dc2626}
+.rd-file-error[hidden]{display:none!important}
+.rd-email-fix{background:none;border:0;padding:0;font:inherit;font-weight:700;color:#2563eb;text-decoration:underline;cursor:pointer}
+input[type=file].error + .rd-order-file__btn{outline:2px solid #dc2626;outline-offset:2px}
